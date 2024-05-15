@@ -2,7 +2,6 @@
 
 ## Base Url
 
-
 ## Menambahkan Data MPASI
 
 Endpoint : /api/mpasi
@@ -18,18 +17,25 @@ Request Body :
 ```json
 {
   "makanan": "Bubur bayi",
+  "porsi": 2,
   "bahan": {
     "kentang": "50gr",
     "telur": "1 butir",
     "kaldu sapi": "50 ml"
   },
-  "cara_masak": {
-    "langkah_1": "Kupas dan potong kentang menjadi potongan kecil-kecil.",
-    "langkah_2": "Rebus kentang hingga empuk, lalu tiriskan.",
-    "langkah_3": "Kocok telur dan tambahkan ke dalam kentang yang telah dihaluskan.",
-    "langkah_4": "Panaskan kaldu sapi dan tambahkan ke dalam campuran kentang dan telur. Aduk hingga merata.",
-    "langkah_5": "Masak campuran tersebut dengan api kecil hingga mengental dan menjadi bubur yang lembut.",
-    "langkah_6": "Angkat dan biarkan dingin sebelum disajikan kepada bayi."
+  "cara_masak": [
+    "Kupas dan potong kentang menjadi potongan kecil-kecil.",
+    "Rebus kentang hingga empuk, lalu tiriskan.",
+    "Kocok telur dan tambahkan ke dalam kentang yang telah dihaluskan.",
+    "Panaskan kaldu sapi dan tambahkan ke dalam campuran kentang dan telur. Aduk hingga merata.",
+    "Masak campuran tersebut dengan api kecil hingga mengental dan menjadi bubur yang lembut.",
+    "Angkat dan biarkan dingin sebelum disajikan kepada bayi."
+  ],
+  "kandungan": {
+    "kalori": "100 kkal",
+    "protein": "6 gr",
+    "lemak": "3,5 gr",
+    "karbohidrat": "7,8 gr"
   },
   "kategori": "6-8 bulan",
   "gambar": "https://link.gambar.com"
@@ -44,21 +50,30 @@ Response Body Success :
   "data": {
     "id": 1,
     "makanan": "Bubur bayi",
+    "porsi": 2,
     "bahan": {
       "kentang": "50gr",
       "telur": "1 butir",
       "kaldu sapi": "50 ml"
     },
-    "cara_masak": {
-      "langkah_1": "Kupas dan potong kentang menjadi potongan kecil-kecil.",
-      "langkah_2": "Rebus kentang hingga empuk, lalu tiriskan.",
-      "langkah_3": "Kocok telur dan tambahkan ke dalam kentang yang telah dihaluskan.",
-      "langkah_4": "Panaskan kaldu sapi dan tambahkan ke dalam campuran kentang dan telur. Aduk hingga merata.",
-      "langkah_5": "Masak campuran tersebut dengan api kecil hingga mengental dan menjadi bubur yang lembut.",
-      "langkah_6": "Angkat dan biarkan dingin sebelum disajikan kepada bayi."
+    "cara_masak": [
+      "Kupas dan potong kentang menjadi potongan kecil-kecil.",
+      "Rebus kentang hingga empuk, lalu tiriskan.",
+      "Kocok telur dan tambahkan ke dalam kentang yang telah dihaluskan.",
+      "Panaskan kaldu sapi dan tambahkan ke dalam campuran kentang dan telur. Aduk hingga merata.",
+      "Masak campuran tersebut dengan api kecil hingga mengental dan menjadi bubur yang lembut.",
+      "Angkat dan biarkan dingin sebelum disajikan kepada bayi."
+    ],
+    "kandungan": {
+      "kalori": "100 kkal",
+      "protein": "6 gr",
+      "lemak": "3,5 gr",
+      "karbohidrat": "7,8 gr"
     },
     "kategori": "6-8 bulan",
-    "gambar": "https://link.gambar.com"
+    "gambar": "https://link.gambar.com",
+    "createdAt": "2024-05-15 10:51:47",
+    "updatedAt": "2024-05-15 10:51:47"
   }
 }
 ```
@@ -121,21 +136,30 @@ Response Body Success :
   "data": {
     "id": 1,
     "makanan": "Bubur bayi",
+    "porsi": 2,
     "bahan": {
       "kentang": "50gr",
       "telur": "1 butir",
       "kaldu sapi": "50 ml"
     },
-    "cara_masak": {
-      "langkah_1": "Kupas dan potong kentang menjadi potongan kecil-kecil.",
-      "langkah_2": "Rebus kentang hingga empuk, lalu tiriskan.",
-      "langkah_3": "Kocok telur dan tambahkan ke dalam kentang yang telah dihaluskan.",
-      "langkah_4": "Panaskan kaldu sapi dan tambahkan ke dalam campuran kentang dan telur. Aduk hingga merata.",
-      "langkah_5": "Masak campuran tersebut dengan api kecil hingga mengental dan menjadi bubur yang lembut.",
-      "langkah_6": "Angkat dan biarkan dingin sebelum disajikan kepada bayi."
+    "cara_masak": [
+      "Kupas dan potong kentang menjadi potongan kecil-kecil.",
+      "Rebus kentang hingga empuk, lalu tiriskan.",
+      "Kocok telur dan tambahkan ke dalam kentang yang telah dihaluskan.",
+      "Panaskan kaldu sapi dan tambahkan ke dalam campuran kentang dan telur. Aduk hingga merata.",
+      "Masak campuran tersebut dengan api kecil hingga mengental dan menjadi bubur yang lembut.",
+      "Angkat dan biarkan dingin sebelum disajikan kepada bayi."
+    ],
+    "kandungan": {
+      "kalori": "100 kkal",
+      "protein": "6 gr",
+      "lemak": "3,5 gr",
+      "karbohidrat": "7,8 gr"
     },
     "kategori": "6-8 bulan",
-    "gambar": "https://link.gambar.com"
+    "gambar": "https://link.gambar.com",
+    "createdAt": "2024-05-15 10:51:47",
+    "updatedAt": "2024-05-15 10:51:47"
   }
 }
 ```
@@ -163,21 +187,28 @@ Request Body :
 ```json
 {
   "makanan": "Bubur",
+  "porsi": 2,
   "bahan": {
     "kentang": "50gr",
     "telur": "1 butir",
     "kaldu sapi": "50 ml"
   },
-  "cara_masak": {
-    "langkah_1": "Kupas dan potong kentang menjadi potongan kecil-kecil.",
-    "langkah_2": "Rebus kentang hingga empuk, lalu tiriskan.",
-    "langkah_3": "Kocok telur dan tambahkan ke dalam kentang yang telah dihaluskan.",
-    "langkah_4": "Panaskan kaldu sapi dan tambahkan ke dalam campuran kentang dan telur. Aduk hingga merata.",
-    "langkah_5": "Masak campuran tersebut dengan api kecil hingga mengental dan menjadi bubur yang lembut.",
-    "langkah_6": "Angkat dan biarkan dingin sebelum disajikan kepada bayi."
+  "cara_masak": [
+    "Kupas dan potong kentang menjadi potongan kecil-kecil.",
+    "Rebus kentang hingga empuk, lalu tiriskan.",
+    "Kocok telur dan tambahkan ke dalam kentang yang telah dihaluskan.",
+    "Panaskan kaldu sapi dan tambahkan ke dalam campuran kentang dan telur. Aduk hingga merata.",
+    "Masak campuran tersebut dengan api kecil hingga mengental dan menjadi bubur yang lembut.",
+    "Angkat dan biarkan dingin sebelum disajikan kepada bayi."
+  ],
+  "kandungan": {
+    "kalori": "100 kkal",
+    "protein": "6 gr",
+    "lemak": "3,5 gr",
+    "karbohidrat": "7,8 gr"
   },
   "kategori": "6-8 bulan",
-  "gambar": "https://link.gambar.com"
+  "gambar": "https://link.gambar.com",
 }
 ```
 
@@ -189,21 +220,30 @@ Response Body Success :
   "data": {
     "id": 1,
     "makanan": "Bubur",
+    "porsi": 2,
     "bahan": {
       "kentang": "50gr",
       "telur": "1 butir",
       "kaldu sapi": "50 ml"
     },
-    "cara_masak": {
-      "langkah_1": "Kupas dan potong kentang menjadi potongan kecil-kecil.",
-      "langkah_2": "Rebus kentang hingga empuk, lalu tiriskan.",
-      "langkah_3": "Kocok telur dan tambahkan ke dalam kentang yang telah dihaluskan.",
-      "langkah_4": "Panaskan kaldu sapi dan tambahkan ke dalam campuran kentang dan telur. Aduk hingga merata.",
-      "langkah_5": "Masak campuran tersebut dengan api kecil hingga mengental dan menjadi bubur yang lembut.",
-      "langkah_6": "Angkat dan biarkan dingin sebelum disajikan kepada bayi."
+    "cara_masak": [
+      "Kupas dan potong kentang menjadi potongan kecil-kecil.",
+      "Rebus kentang hingga empuk, lalu tiriskan.",
+      "Kocok telur dan tambahkan ke dalam kentang yang telah dihaluskan.",
+      "Panaskan kaldu sapi dan tambahkan ke dalam campuran kentang dan telur. Aduk hingga merata.",
+      "Masak campuran tersebut dengan api kecil hingga mengental dan menjadi bubur yang lembut.",
+      "Angkat dan biarkan dingin sebelum disajikan kepada bayi."
+    ],
+    "kandungan": {
+      "kalori": "100 kkal",
+      "protein": "6 gr",
+      "lemak": "3,5 gr",
+      "karbohidrat": "7,8 gr"
     },
     "kategori": "6-8 bulan",
-    "gambar": "https://link.gambar.com"
+    "gambar": "https://link.gambar.com",
+    "createdAt": "2024-05-15 10:51:47",
+    "updatedAt": "2024-05-15 11:48:39"
   }
 }
 ```
@@ -226,7 +266,7 @@ Response Body Success :
 
 ```json
 {
-  "data": "berhasil menghapus data makanan"
+  "data": "Berhasil menghapus data makanan"
 }
 ```
 
