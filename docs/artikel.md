@@ -19,7 +19,7 @@ Request Body :
 {
   "judul" : "Apa itu stunting",
   "deskripsi" : "Stunting adalah kondisi terhambatnya pertumbuhan fisik dan perkembangan otak pada anak-anak, biasanya disebabkan oleh kurangnya asupan gizi yang memadai dan infeksi pada masa awal kehidupan",
-  "tanggal": 05/14/2024,
+  "tanggal": "2024-05-14",
   "sumber": "http://sumber.com",
   "gambar": "https://link.gambar.com",
   "kategori": "Semua Kategori"
@@ -35,11 +35,12 @@ Response Body Success :
     "id" : 1,
     "judul" : "Apa itu stunting",
     "deskripsi" : "Stunting adalah kondisi terhambatnya pertumbuhan fisik dan perkembangan otak pada anak-anak, biasanya disebabkan oleh kurangnya asupan gizi yang memadai dan infeksi pada masa awal kehidupan",
-    "tanggal": 05/14/2024,
+    "tanggal": "2024-05-14",
     "sumber": "http://sumber.com",
     "gambar": "https://link.gambar.com",
-    "kategori": "Semua Kategori"
-
+    "kategori": "Semua Kategori",
+    "createdAt": "2024-05-15 10:51:47",
+    "updatedAt": "2024-05-15 10:51:47"
   }
 }
 ```
@@ -68,16 +69,16 @@ Response Body Success :
       "id" : 1,
       "judul" : "Apa itu stunting",
       "deskripsi" : "Stunting adalah kondisi terhambatnya pertumbuhan fisik dan perkembangan otak pada anak-anak, biasanya disebabkan oleh kurangnya asupan gizi yang memadai dan infeksi pada masa awal kehidupan",
-      "tanggal": 05/14/2024,
+      "tanggal": "2024-05-14",
       "sumber": "http://sumber.com",
       "gambar": "https://link.gambar.com",
-     "kategori": "Semua Kategori",
+      "kategori": "Semua Kategori",
     },
     {
       "id" : 2,
       "judul" : "Apa itu stunting",
       "deskripsi" : "Stunting adalah kondisi terhambatnya pertumbuhan fisik dan perkembangan otak pada anak-anak, biasanya disebabkan oleh kurangnya asupan gizi yang memadai dan infeksi pada masa awal kehidupan",
-      "tanggal": 05/14/2024,
+      "tanggal": "2024-05-14",
       "sumber": "http://sumber.com",
       "gambar": "https://link.gambar.com",
       "kategori": "6-8 bulan",
@@ -109,10 +110,12 @@ Response Body Success :
     "id" : 1,
     "judul" : "Apa itu stunting",
     "deskripsi" : "Stunting adalah kondisi terhambatnya pertumbuhan fisik dan perkembangan otak pada anak-anak, biasanya disebabkan oleh kurangnya asupan gizi yang memadai dan infeksi pada masa awal kehidupan",
-    "tanggal": 05/14/2024,
+    "tanggal": "2024-05-14",
     "sumber": "http://sumber.com",
     "gambar": "https://link.gambar.com",
-    "kategori": "Semua Kategori"
+    "kategori": "Semua Kategori",
+    "createdAt": "2024-05-15 10:51:47",
+    "updatedAt": "2024-05-15 10:51:47"
   }
 }
 ```
@@ -142,7 +145,7 @@ Request Body :
 {
   "judul" : "Apa itu stunting",
   "deskripsi" : "Stunting adalah kondisi terhambatnya pertumbuhan fisik dan perkembangan otak pada anak-anak, biasanya disebabkan oleh kurangnya asupan gizi yang memadai dan infeksi pada masa awal kehidupan",
-  "tanggal": 05/14/2024,
+  "tanggal": "2024-05-14",
   "sumber": "http://sumber.com",
   "gambar": "https://link.gambar.com",
   "kategori": "Semua Kategori"
@@ -158,11 +161,12 @@ Response Body Success :
     "id" : 1,
     "judul" : "Apa itu stunting",
     "deskripsi" : "Stunting adalah kondisi terhambatnya pertumbuhan fisik dan perkembangan otak pada anak-anak, biasanya disebabkan oleh kurangnya asupan gizi yang memadai dan infeksi pada masa awal kehidupan",
-    "tanggal": 05/14/2024,
+    "tanggal": "2024-05-14",
     "sumber": "http://sumber.com",
     "gambar": "https://link.gambar.com",
-    "kategori": "Semua Kategori"
-
+    "kategori": "Semua Kategori",
+    "createdAt": "2024-05-15 10:51:47",
+    "updatedAt": "2024-05-15 10:51:47"
   }
 }
 ```
