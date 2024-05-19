@@ -1,3 +1,4 @@
+const { Op } = require('sequelize');
 const Artikel = require('../models/artikel');
 const ResponseError = require('../error/response-error');
 const ArtikelValidation = require('../validation/artikel-validation');
@@ -11,8 +12,22 @@ const createArtikel = async (artikelData) => {
 };
 
 // Fungsi untuk mendapatkan semua artikel
-const getAllArtikel = async () => {
-  const artikelList = await Artikel.findAll();
+const getAllArtikel = async (category, searchQuery) => {
+  const queryOptions = {
+    where: {},
+  };
+
+  if (category) {
+    queryOptions.where.kategori = category;
+  }
+
+  if (searchQuery) {
+    queryOptions.where.judul = {
+      [Op.like]: `%${searchQuery}%`,
+    };
+  }
+
+  const artikelList = await Artikel.findAll(queryOptions);
   if (!artikelList) {
     throw new ResponseError(404, 'Gagal mendapatkan artikel');
   }

@@ -1,3 +1,4 @@
+const { Op } = require('sequelize');
 const Mpasi = require('../models/mpasi');
 const { validate } = require('../validation/validation');
 const MpasiValidation = require('../validation/mpasi-validation');
@@ -11,12 +12,26 @@ const createMpasi = async (mpasiData) => {
 };
 
 // Fungsi untuk mendapatkan semua MPASI
-const getAllMpasi = async () => {
-  const ListMpasi = await Mpasi.findAll();
-  if (!ListMpasi) {
+const getAllMpasi = async (category, searchQuery) => {
+  const queryOptions = {
+    where: {},
+  };
+
+  if (category) {
+    queryOptions.where.kategori = category;
+  }
+
+  if (searchQuery) {
+    queryOptions.where.makanan = {
+      [Op.like]: `%${searchQuery}%`,
+    };
+  }
+
+  const mpasiList = await Mpasi.findAll(queryOptions);
+  if (!mpasiList) {
     throw new ResponseError(404, 'Gagal mendapatkan data Makanan');
   }
-  return ListMpasi;
+  return mpasiList;
 };
 
 // Fungsi untuk mendapatkan data MPASI berdasarkan ID

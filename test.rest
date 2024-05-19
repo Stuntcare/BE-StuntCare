@@ -25,7 +25,7 @@ Accept: application/json
     "lemak": "3,5 gr",
     "karbohidrat": "7,8 gr"
   },
-  "kategori": "6-8 bulan",
+  "kategori": "semua",
   "gambar": "https://link.gambar.com"
 }
 
@@ -67,6 +67,15 @@ Accept: application/json
 ###
 DELETE  http://localhost:3000/api/mpasi/3
 
+###
+GET http://localhost:3000/api/mpasi?kategori=semua
+
+###
+GET http://localhost:3000/api/mpasi?q=bubur
+
+
+
+
 
 ###
 // 2. CRUD Artikel
@@ -75,12 +84,12 @@ Content-Type: application/json
 Accept: application/json
 
 {
-  "judul" : "Apa itu stunting",
+  "judul" : "penyebab kekurangan gizi pada anak",
   "deskripsi" : "Stunting adalah kondisi terhambatnya pertumbuhan fisik dan perkembangan otak pada anak-anak, biasanya disebabkan oleh kurangnya asupan gizi yang memadai dan infeksi pada masa awal kehidupan",
   "tanggal": "2024-05-14",
   "sumber": "http://sumber.com",
   "gambar": "https://link.gambar.com",
-  "kategori": "Semua Kategori"
+  "kategori": "Semua"
 }
 
 ###
@@ -93,6 +102,11 @@ GET http://localhost:3000/api/artikel/1
 Content-Type: application/json
 Accept: application/json
 
+###
+GET http://localhost:3000/api/artikel?kategori=Semua Kategori
+
+###
+GET http://localhost:3000/api/artikel?q=stunting
 
 ###
 PUT http://localhost:3000/api/artikel/1

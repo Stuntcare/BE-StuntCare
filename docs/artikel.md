@@ -128,6 +128,64 @@ Response Body Error :
 }
 ```
 
+## Mengambil Artikel Berdasarkan Kategori
+
+Endpoint : /api/artikel?kategori=6-8 bulan
+
+Method : GET
+
+Response Body Success :
+
+```json
+{
+  "message" : "Sukses mendapatkan data artikel",
+  "data": [
+    {
+      "id" : 2,
+      "judul" : "Apa itu stunting",
+      "deskripsi" : "Stunting adalah kondisi terhambatnya pertumbuhan fisik dan perkembangan otak pada anak-anak, biasanya disebabkan oleh kurangnya asupan gizi yang memadai dan infeksi pada masa awal kehidupan",
+      "tanggal": "2024-05-14",
+      "sumber": "http://sumber.com",
+      "gambar": "https://link.gambar.com",
+      "kategori": "6-8 bulan",
+    }
+  ]
+}
+```
+
+## Pencarian Artikel
+
+Endpoint : /api/artikel?q=Apa
+
+Method : GET
+
+Response Body Success :
+
+```json
+{
+  "message" : "Sukses mendapatkan data artikel",
+  "data": [
+    {
+      "id" : 2,
+      "judul" : "Apa itu stunting",
+      "deskripsi" : "Stunting adalah kondisi terhambatnya pertumbuhan fisik dan perkembangan otak pada anak-anak, biasanya disebabkan oleh kurangnya asupan gizi yang memadai dan infeksi pada masa awal kehidupan",
+      "tanggal": "2024-05-14",
+      "sumber": "http://sumber.com",
+      "gambar": "https://link.gambar.com",
+      "kategori": "6-8 bulan",
+    }
+    {
+      "id" : 3,
+      "judul" : "Apa itu penyakit",
+      "deskripsi" : "penyakit adalah kondisi terhambatnya pertumbuhan fisik dan perkembangan otak pada anak-anak, biasanya disebabkan oleh kurangnya asupan gizi yang memadai dan infeksi pada masa awal kehidupan",
+      "tanggal": "2024-05-14",
+      "sumber": "http://sumber.com",
+      "gambar": "https://link.gambar.com",
+      "kategori": "semua",
+    }
+  ]
+}
+```
 
 ## Mengubah Data Artikel
 

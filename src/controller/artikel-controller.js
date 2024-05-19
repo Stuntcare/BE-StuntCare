@@ -12,8 +12,10 @@ const createArtikel = async (req, res, next) => {
 
 // Controller untuk mendapatkan semua artikel
 const getAllArtikel = async (req, res, next) => {
+  const category = req.query.kategori;
+  const searchQuery = req.query.q;
   try {
-    const artikelList = await ArtikelService.getAllArtikel();
+    const artikelList = await ArtikelService.getAllArtikel(category, searchQuery);
     res.status(200).json({
       message: 'Sukses mendapatkan data Artikel',
       data: artikelList.map((artikel) => ({

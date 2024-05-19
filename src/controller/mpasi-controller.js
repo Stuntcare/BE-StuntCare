@@ -12,8 +12,10 @@ const createMpasi = async (req, res, next) => {
 
 // Controller untuk mendapatkan semua MPASI
 const getAllMpasi = async (req, res, next) => {
+  const category = req.query.kategori;
+  const searchQuery = req.query.q;
   try {
-    const mpasiList = await MpasiService.getAllMpasi();
+    const mpasiList = await MpasiService.getAllMpasi(category, searchQuery);
     res.status(200).json({
       message: 'Sukses mendapatkan data Makanan',
       data: mpasiList.map((mpasi) => ({
