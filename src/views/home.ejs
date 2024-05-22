@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <section>
+        <h2>Daftar MPASI</h2>
+        <div id="mpasiList">
+            <% if (data && data.length > 0) { %>
+                <% data.forEach((mpasi) => { %>
+                    <div class="mpasi-item">
+                        <img src="<%= mpasi.gambar %>" alt="<%= mpasi.makanan %>">
+                        <h3><%= mpasi.makanan %></h3>
+                        <p>Kategori: <%= mpasi.kategori %></p>
+                    </div>
+                <% }) %>
+            <% } else { %>
+                <p>Tidak ada data MPASI yang tersedia.</p>
+            <% } %>
+        </div>
+        <div id="pagination">
+            <% if (pages > 1) { %>
+                <% if (page >= 1) { %>
+                    <a class="pagination-button" href="/api/mpasi?page=1&limit=<%= limit %>">1</a>
+                <% } %>
+                <% for (let i = 2; i <= pages; i++) { %>
+                    <a class="pagination-button" href="/api/mpasi?page=<%= i %>&limit=<%= limit %>"><%= i %></a>
+                <% } %>
+            <% } %>
+        </div>
+    </section>
+    <script src="pagination.js"></script>
+</body>
+</html>

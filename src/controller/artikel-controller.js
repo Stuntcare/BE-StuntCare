@@ -1,6 +1,6 @@
+/* eslint-disable max-len */
 const ArtikelService = require('../service/artikel-service');
 
-// Controller untuk membuat artikel baru
 const createArtikel = async (req, res, next) => {
   try {
     const artikel = await ArtikelService.createArtikel(req.body);
@@ -10,10 +10,14 @@ const createArtikel = async (req, res, next) => {
   }
 };
 
-// Controller untuk mendapatkan semua artikel
 const getAllArtikel = async (req, res, next) => {
+  const category = req.query.kategori;
+  const searchQuery = req.query.q;
+  const page = parseInt(req.query.page, 10) || 1;
+  const limit = parseInt(req.query.limit, 10) || 12;
+
   try {
-    const artikelList = await ArtikelService.getAllArtikel();
+    const { artikelList, count } = await ArtikelService.getAllArtikel(category, searchQuery, page, limit);
     res.status(200).json({
       message: 'Sukses mendapatkan data Artikel',
       data: artikelList.map((artikel) => ({
@@ -25,13 +29,15 @@ const getAllArtikel = async (req, res, next) => {
         gambar: artikel.gambar,
         kategori: artikel.kategori,
       })),
+      total: count,
+      page,
+      pages: Math.ceil(count / limit),
     });
   } catch (error) {
     next(error);
   }
 };
 
-// Controller untuk mendapatkan artikel berdasarkan ID
 const getArtikelById = async (req, res, next) => {
   const artikelId = req.params.id;
   try {
@@ -46,7 +52,6 @@ const getArtikelById = async (req, res, next) => {
   }
 };
 
-// Controller untuk mengupdate artikel berdasarkan ID
 const updateArtikel = async (req, res, next) => {
   const artikelId = req.params.id;
   try {
@@ -57,7 +62,6 @@ const updateArtikel = async (req, res, next) => {
   }
 };
 
-// Controller untuk menghapus artikel berdasarkan ID
 const deleteArtikel = async (req, res, next) => {
   const artikelId = req.params.id;
   try {

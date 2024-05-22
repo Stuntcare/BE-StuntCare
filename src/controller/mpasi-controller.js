@@ -1,6 +1,5 @@
 const MpasiService = require('../service/mpasi-service');
 
-// Controller untuk membuat MPASI baru
 const createMpasi = async (req, res, next) => {
   try {
     const mpasi = await MpasiService.createMpasi(req.body);
@@ -10,10 +9,14 @@ const createMpasi = async (req, res, next) => {
   }
 };
 
-// Controller untuk mendapatkan semua MPASI
 const getAllMpasi = async (req, res, next) => {
+  const category = req.query.kategori;
+  const searchQuery = req.query.q;
+  const page = parseInt(req.query.page, 10) || 1;
+  const limit = parseInt(req.query.limit, 10) || 12;
+
   try {
-    const mpasiList = await MpasiService.getAllMpasi();
+    const { mpasiList, count } = await MpasiService.getAllMpasi(category, searchQuery, page, limit);
     res.status(200).json({
       message: 'Sukses mendapatkan data Makanan',
       data: mpasiList.map((mpasi) => ({
@@ -22,13 +25,15 @@ const getAllMpasi = async (req, res, next) => {
         kategori: mpasi.kategori,
         gambar: mpasi.gambar,
       })),
+      total: count,
+      page,
+      pages: Math.ceil(count / limit),
     });
   } catch (error) {
     next(error);
   }
 };
 
-// Controller untuk mendapatkan MPASI berdasarkan ID
 const getMpasiById = async (req, res, next) => {
   const mpasiId = req.params.id;
   try {
@@ -43,7 +48,6 @@ const getMpasiById = async (req, res, next) => {
   }
 };
 
-// Controller untuk mengupdate MPASI berdasarkan ID
 const updateMpasi = async (req, res, next) => {
   const mpasiId = req.params.id;
   try {
@@ -54,7 +58,6 @@ const updateMpasi = async (req, res, next) => {
   }
 };
 
-// Controller untuk menghapus MPASI berdasarkan ID
 const deleteMpasi = async (req, res, next) => {
   const mpasiId = req.params.id;
   try {

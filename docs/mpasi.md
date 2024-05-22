@@ -172,6 +172,56 @@ Response Body Error :
 }
 ```
 
+## Mengambil Mpasi Berdasarkan Kategori
+
+Endpoint : /api/mpasi?kategori=6-8 Bulan
+
+Method : GET
+
+Response Body Success :
+
+```json
+{
+  "message": "Sukses mendapatkan data Makanan",
+  "data": [
+    {
+      "id": 1,
+      "makanan": "Bubur bayi",
+      "kategori": "6-8 bulan",
+      "gambar": "https://link.gambar.com"
+    },
+    {
+      "id": 1,
+      "makanan": "Bubur anak",
+      "kategori": "6-8 bulan",
+      "gambar": "https://link.gambar.com"
+    }
+  ]
+}
+```
+
+## Pencarian Mpasi
+
+Endpoint : /api/mpasi?q=Bubur bayi
+
+Method : GET
+
+Response Body Success :
+
+```json
+{
+  "message": "Sukses mendapatkan data Makanan",
+  "data": [
+    {
+      "id": 1,
+      "makanan": "Bubur bayi",
+      "kategori": "6-8 bulan",
+      "gambar": "https://link.gambar.com"
+    }
+  ]
+}
+```
+
 ## Mengubah Data MPASI
 
 Endpoint : /api/mpasi/:id

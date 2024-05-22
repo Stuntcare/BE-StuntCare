@@ -1,25 +1,41 @@
+const { Op } = require('sequelize');
 const Mpasi = require('../models/mpasi');
 const { validate } = require('../validation/validation');
 const MpasiValidation = require('../validation/mpasi-validation');
 const ResponseError = require('../error/response-error');
 
-// Fungsi untuk membuat data MPASI baru
 const createMpasi = async (mpasiData) => {
   const validatedData = validate(MpasiValidation.createMpasiValidation, mpasiData);
   const mpasi = await Mpasi.create(validatedData);
   return mpasi;
 };
 
-// Fungsi untuk mendapatkan semua MPASI
-const getAllMpasi = async () => {
-  const ListMpasi = await Mpasi.findAll();
-  if (!ListMpasi) {
+const getAllMpasi = async (category, searchQuery, page = 1, limit = 12) => {
+  const offset = (page - 1) * limit;
+
+  const queryOptions = {
+    where: {},
+    limit,
+    offset,
+  };
+
+  if (category) {
+    queryOptions.where.kategori = category;
+  }
+
+  if (searchQuery) {
+    queryOptions.where.makanan = {
+      [Op.like]: `%${searchQuery}%`,
+    };
+  }
+
+  const { rows: mpasiList, count } = await Mpasi.findAndCountAll(queryOptions);
+  if (!mpasiList) {
     throw new ResponseError(404, 'Gagal mendapatkan data Makanan');
   }
-  return ListMpasi;
+  return { mpasiList, count };
 };
 
-// Fungsi untuk mendapatkan data MPASI berdasarkan ID
 const getMpasiById = async (mpasiId) => {
   const validatedId = validate(MpasiValidation.getMpasiValidation, mpasiId);
   const mpasi = await Mpasi.findByPk(validatedId);
@@ -29,7 +45,6 @@ const getMpasiById = async (mpasiId) => {
   return mpasi;
 };
 
-// Fungsi untuk melakukan update data MPASI berdasarkan ID
 const updateMpasi = async (mpasiId, updatedData) => {
   const validatedId = validate(MpasiValidation.getMpasiValidation, mpasiId);
   const validatedData = validate(MpasiValidation.updateMpasiValidation, updatedData);
@@ -43,7 +58,6 @@ const updateMpasi = async (mpasiId, updatedData) => {
   return mpasi;
 };
 
-// Fungsi untuk menghapus data MPASI berdasarkan ID
 const deleteMpasiById = async (mpasiId) => {
   const validatedId = validate(MpasiValidation.getMpasiValidation, mpasiId);
   const mpasi = await Mpasi.findByPk(validatedId);
