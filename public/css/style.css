@@ -1,0 +1,85 @@
+/* Reset beberapa gaya default */
+body,
+h2,
+p,
+form,
+input,
+button,
+div,
+label {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Poppins, sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+}
+
+section{
+  width: max-content;
+}
+
+.container {
+  margin: 0 auto;
+}
+
+#mpasiList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.mpasi-item {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 200px;
+  margin: 10px;
+  padding: 15px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.mpasi-item img {
+  max-width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+}
+
+.mpasi-item h3 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.mpasi-item p {
+  font-size: 14px;
+  color: #666;
+}
+
+#pagination {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.pagination-button {
+  display: inline-block;
+  padding: 8px 12px;
+  margin: 0 5px;
+  background-color: #4caf50;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.pagination-button:hover {
+  background-color: #45a049;
+}

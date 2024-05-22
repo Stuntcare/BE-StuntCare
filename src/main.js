@@ -3,7 +3,7 @@ const web = require('./application/web');
 const logger = require('./application/logging');
 const db = require('./config/database');
 
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 8080;
 
 db.sync()
   .then(() => {
