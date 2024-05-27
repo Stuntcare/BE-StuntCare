@@ -5,7 +5,8 @@
   "main": "src/main.js",
   "scripts": {
     "start": "node src/main.js",
-    "start-dev": "nodemon src/main.js"
+    "start-dev": "nodemon src/main.js",
+    "build": "babel src -d dist"
   },
   "engines": {
     "node": "^20"
@@ -37,6 +38,7 @@
     "nanoid": "^3.3.7",
     "node-fetch": "^2.7.0",
     "sequelize": "^6.37.3",
+    "sweetalert2": "^11.11.0",
     "winston": "^3.13.0"
   }
 }

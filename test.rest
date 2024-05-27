@@ -36,7 +36,7 @@ GET http://localhost:3000/api/mpasi
 GET http://localhost:3000/api/mpasi?page=2&limit=12
 
 ###
-GET http://localhost:3000/api/mpasi/22
+GET http://localhost:3000/api/mpasi/40
 
 ###
 PUT http://localhost:3000/api/mpasi/1
@@ -65,7 +65,10 @@ Content-Type: application/json
 DELETE  http://localhost:3000/api/mpasi/3
 
 ###
-GET http://localhost:3000/api/mpasi?kategori=semua
+GET http://localhost:3000/api/mpasi?kategori=6-8 bulan
+
+###
+GET http://localhost:3000/api/mpasi?limit=30,kategori=6-8 bulan
 
 ###
 GET http://localhost:3000/api/mpasi?q=bubur
@@ -84,7 +87,7 @@ Content-Type: application/json
   "deskripsi" : "Stunting adalah kondisi terhambatnya pertumbuhan fisik dan perkembangan otak pada anak-anak, biasanya disebabkan oleh kurangnya asupan gizi yang memadai dan infeksi pada masa awal kehidupan",
   "tanggal": "2024-05-14",
   "sumber": "http://sumber.com",
-  "gambar": "https://sardjito.co.id/wp-content/uploads/2019/08/stunting.jpg",
+  "gambar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFV4oRjeIPLpkuKodp6Vpi5_dsr0_wz-D7uuuNz5zglw&s",
   "kategori": "Semua"
 }
 

@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 const fetch = require('node-fetch');
 
-fetch('https://restaurant-api.dicoding.dev/list')
+fetch('https://app-000880c5-757a-4656-93cb-e5ffc3457eed.cleverapps.io/api/mpasi')
   .then((response) => {
     if (!response.ok) {
       throw new Error('Network response was not ok');

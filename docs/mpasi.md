@@ -110,7 +110,10 @@ Response Body Success :
       "kategori": "9-11 bulan",
       "gambar": "https://link.gambar.com"
     }
-  ]
+  ],
+  "total": 2,
+  "page": 1,
+  "pages": 1
 }
 ```
 
