@@ -31,14 +31,12 @@ Request Body :
     "Masak campuran tersebut dengan api kecil hingga mengental dan menjadi bubur yang lembut.",
     "Angkat dan biarkan dingin sebelum disajikan kepada bayi."
   ],
-  "kandungan": {
-    "kalori": "100 kkal",
-    "protein": "6 gr",
-    "lemak": "3,5 gr",
-    "karbohidrat": "7,8 gr"
-  },
   "kategori": "6-8 bulan",
-  "gambar": "https://link.gambar.com"
+  "gambar": "https://link.gambar.com",
+  "kalori": 100,
+  "protein": 6,
+  "lemak": 3.5,
+  "karbohidrat": 7.8
 }
 ```
 
@@ -64,14 +62,12 @@ Response Body Success :
       "Masak campuran tersebut dengan api kecil hingga mengental dan menjadi bubur yang lembut.",
       "Angkat dan biarkan dingin sebelum disajikan kepada bayi."
     ],
-    "kandungan": {
-      "kalori": "100 kkal",
-      "protein": "6 gr",
-      "lemak": "3,5 gr",
-      "karbohidrat": "7,8 gr"
-    },
     "kategori": "6-8 bulan",
     "gambar": "https://link.gambar.com",
+    "kalori": 100,
+    "protein": 6,
+    "lemak": 3.5,
+    "karbohidrat": 7.8,
     "createdAt": "2024-05-15 10:51:47",
     "updatedAt": "2024-05-15 10:51:47"
   }
@@ -110,7 +106,10 @@ Response Body Success :
       "kategori": "9-11 bulan",
       "gambar": "https://link.gambar.com"
     }
-  ]
+  ],
+  "total": 2,
+  "page": 1,
+  "pages": 1
 }
 ```
 
@@ -150,14 +149,12 @@ Response Body Success :
       "Masak campuran tersebut dengan api kecil hingga mengental dan menjadi bubur yang lembut.",
       "Angkat dan biarkan dingin sebelum disajikan kepada bayi."
     ],
-    "kandungan": {
-      "kalori": "100 kkal",
-      "protein": "6 gr",
-      "lemak": "3,5 gr",
-      "karbohidrat": "7,8 gr"
-    },
     "kategori": "6-8 bulan",
     "gambar": "https://link.gambar.com",
+    "kalori": 100,
+    "protein": 6,
+    "lemak": 3.5,
+    "karbohidrat": 7.8,
     "createdAt": "2024-05-15 10:51:47",
     "updatedAt": "2024-05-15 10:51:47"
   }
@@ -251,14 +248,12 @@ Request Body :
     "Masak campuran tersebut dengan api kecil hingga mengental dan menjadi bubur yang lembut.",
     "Angkat dan biarkan dingin sebelum disajikan kepada bayi."
   ],
-  "kandungan": {
-    "kalori": "100 kkal",
-    "protein": "6 gr",
-    "lemak": "3,5 gr",
-    "karbohidrat": "7,8 gr"
-  },
   "kategori": "6-8 bulan",
   "gambar": "https://link.gambar.com",
+  "kalori": 100,
+  "protein": 6,
+  "lemak": 3.5,
+  "karbohidrat": 7.8
 }
 ```
 
@@ -284,14 +279,12 @@ Response Body Success :
       "Masak campuran tersebut dengan api kecil hingga mengental dan menjadi bubur yang lembut.",
       "Angkat dan biarkan dingin sebelum disajikan kepada bayi."
     ],
-    "kandungan": {
-      "kalori": "100 kkal",
-      "protein": "6 gr",
-      "lemak": "3,5 gr",
-      "karbohidrat": "7,8 gr"
-    },
     "kategori": "6-8 bulan",
     "gambar": "https://link.gambar.com",
+        "kalori": 100,
+    "protein": 6,
+    "lemak": 3.5,
+    "karbohidrat": 7.8,
     "createdAt": "2024-05-15 10:51:47",
     "updatedAt": "2024-05-15 11:48:39"
   }

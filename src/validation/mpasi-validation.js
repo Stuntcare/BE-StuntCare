@@ -8,14 +8,16 @@ const createMpasiValidation = Joi.object({
     Joi.string().required(),
   ).required(),
   cara_masak: Joi.array().items(Joi.string().required()).required(),
-  kandungan: Joi.object({
-    kalori: Joi.string().required(),
-    protein: Joi.string().required(),
-    lemak: Joi.string().required(),
-    karbohidrat: Joi.string().required(),
-  }).required(),
+  kandungan: Joi.object().pattern(
+    Joi.string(),
+    Joi.string().optional(),
+  ).optional(),
   kategori: Joi.string().required(),
-  gambar: Joi.string().uri().optional(),
+  gambar: Joi.string().uri().required(),
+  kalori: Joi.number().min(0).optional(),
+  protein: Joi.number().min(0).optional(),
+  lemak: Joi.number().min(0).optional(),
+  karbohidrat: Joi.number().min(0).optional(),
 });
 
 const updateMpasiValidation = Joi.object({
@@ -26,14 +28,16 @@ const updateMpasiValidation = Joi.object({
     Joi.string().optional(),
   ).optional(),
   cara_masak: Joi.array().items(Joi.string().optional()).optional(),
-  kandungan: Joi.object({
-    kalori: Joi.string().optional(),
-    protein: Joi.string().optional(),
-    lemak: Joi.string().optional(),
-    karbohidrat: Joi.string().optional(),
-  }).optional(),
+  kandungan: Joi.object().pattern(
+    Joi.string(),
+    Joi.string().optional(),
+  ).optional(),
   kategori: Joi.string().optional(),
   gambar: Joi.string().uri().optional(),
+  kalori: Joi.number().min(0).optional(),
+  protein: Joi.number().min(0).optional(),
+  lemak: Joi.number().min(0).optional(),
+  karbohidrat: Joi.number().min(0).optional(),
 });
 
 const getMpasiValidation = Joi.number().positive().required();

@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const data = await response.json();
         if (response.ok) {
-          window.location.href = '/mpasi';
+          window.location.href = '/dashboard';
         } else {
           alert(data.errors || 'Username atau password salah.');
         }

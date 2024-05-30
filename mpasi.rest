@@ -1,0 +1,207 @@
+// 1. CRUD Mpasi
+POST http://localhost:3000/api/mpasi
+Content-Type: application/json
+
+{
+  "makanan": "Bubur Hati Ayam",
+  "porsi": 3,
+  "bahan": {
+    "nasi": "60gr",
+    "hati ayam": "30gr",
+    "minyak jagung": "7,5ml",
+    "garam": "secukupnya (jika diperlukan)"
+  },
+  "cara_masak": [
+    "Tumis bumbu halus hingga harum.",
+    "Masukkan hati ayam, aduk hingga berubah warna.",
+    "Masukkan bayam dan garam secukupnya.",
+    "Masukkan nasi, aduk hingga teksturnya sesuai keinginan."
+  ],
+  "kategori": "6-8 bulan",
+  "gambar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGpeLd7_frYsELL1erPmeJ04NjZYEEoA_6bpHkFIi7Bw&s",
+  "kalori": 67,
+  "protein": 3,
+  "lemak": 6,
+  "karbohidrat": 6
+}
+
+###
+POST http://localhost:3000/api/mpasi
+Content-Type: application/json
+
+{
+  "makanan": "Ayam Kecap",
+  "porsi": 3,
+  "bahan": {
+    "beras": "60gr",
+    "kaldu ayam": "300ml",
+    "daging ayam": "100gr",
+    "Kecap manis": "2 sdm",
+    "minyak jagung": "1,5 sdm"
+  },
+  "cara_masak": [
+    "Kupas dan potong kentang menjadi potongan kecil-kecil.",
+    "Rebus kentang hingga empuk, lalu tiriskan.",
+    "Kocok telur dan tambahkan ke dalam kentang yang telah dihaluskan.",
+    "Panaskan kaldu sapi dan tambahkan ke dalam campuran kentang dan telur. Aduk hingga merata.",
+    "Masak campuran tersebut dengan api kecil hingga mengental dan menjadi bubur yang lembut.",
+    "Angkat dan biarkan dingin sebelum disajikan kepada bayi."
+  ],
+  "kategori": "9-12 bulan",
+  "gambar": "https://img-global.cpcdn.com/recipes/b7e800b9e1c73f32/680x482cq70/nasi-tim-ayam-kecap-mpasi-9-foto-resep-utama.jpg",
+  "kalori": 128,
+  "protein": 5.8,
+  "lemak": 5.4,
+  "karbohidrat": 13.6
+}
+
+###
+POST http://localhost:3000/api/mpasi
+Content-Type: application/json
+
+{
+  "makanan": "Bubur Patin",
+  "porsi": 3,
+  "bahan": {
+    "Nasi": "60 gram",
+    "Hati Ayam": "30 gram",
+    "Minyak Jagung": "7.5 ml",
+    "Bawang Bombai": "3 iris",
+    "Jahe": "1/3 cm",
+    "Daun salam" : "1 lembar",
+    "Tomat, potong kecil-kecil": "10 gram"
+  },
+  "cara_masak": [
+    "1, Lumuri ikan patin dan hati ayam dengan jeruk nipis dan garam, diamkan 15 menit",
+    "2. Campur ikan patin dan hati ayam dengan bumbu halus, tambahkan tomat, bawang bombai, jahe, seledri, daun salam, dan daun jeruk",
+    "3. Kukus hingga matang",
+    "4. Ketika akan dicampur dengan nasi, ambil daun salam dan daun jeruknya. Lalu saring hingga teksturnya sesuai yang diinginkan."
+  ],
+  "kategori": "6-8 bulan",
+  "gambar": "https://blue.kumparan.com/image/upload/fl_progressive,fl_lossy,c_fill,q_auto:best,w_640/v1634025439/7eb31d6a3a0418b558d1086f346f1b3c1a880bed7346f4223e15227a763a1827.jpg",
+  "kalori": 80,
+  "protein": 4.3,
+  "lemak": 4.3,
+  "karbohidrat": 6
+}
+###
+POST http://localhost:3000/api/mpasi
+Content-Type: application/json
+
+{
+  "makanan": "Bubur Daging Sapi",
+  "porsi": 3,
+  "bahan": {
+    "Nasi": "60 gram",
+    "Daging Sapi Giling": "50 gram",
+    "Minyak Jagung": "7.5 ml",
+    "Bayam, rebus matang, iris kecil-kecil": "15 gram",
+    "Minyak Kelapa": "7.5 ml",
+    "Garam" : "Secukupnya"
+  },
+  "cara_masak": [
+    "1. Kukus daging sapi giling yang sudah dicampur bumbu halus di dalam wadah tahan panas hingga matang",
+    "2. Tambahkan bayam",
+    "3. Masukkan minyak kelapa dan garam secukupnya",
+    "4. Ketika akan dicampur dengan nasi, ambil daun salam dan daun jeruknya. Lalu saring hingga teksturnya sesuai yang diinginkan."
+  ],
+  "kategori": "6-8 bulan",
+  "gambar": "https://blue.kumparan.com/image/upload/fl_progressive,fl_lossy,c_fill,q_auto:best,w_640/v1634025439/7eb31d6a3a0418b558d1086f346f1b3c1a880bed7346f4223e15227a763a1827.jpg",
+  "kalori": 80,
+  "protein": 4.3,
+  "lemak": 4.3,
+  "karbohidrat": 6
+}
+
+###
+POST http://localhost:3000/api/mpasi
+Content-Type: application/json
+
+{
+  "makanan": "Bubur Kakap Tempe",
+  "porsi": 3,
+  "bahan": {
+    "Nasi": "60 gram",
+    "Ikan kakap, cincang halus": "45 gram",
+    "Tempe": "15 gram",
+    "Kaldu Ikan": "250 ml",
+    "Minyak Kedelai": "7.5 ml",
+    "Bawang Putih" : "1 siung"
+  },
+  "cara_masak": [
+    "1. Lumuri ikan kakap dengan bawang, diamkan selama 15 menit",
+    "2. Rebus semua bahan dengan kaldu ikan hingga matang dan lunak",
+    "3. Tambahkan nasi, lalu saring hingga teksturnya sesuai yang diinginkan",
+    "4. Ketika akan dicampur dengan nasi, ambil daun salam dan daun jeruknya. Lalu saring hingga teksturnya sesuai yang diinginkan."
+  ],
+  "kategori": "6-8 bulan",
+  "gambar": "https://asset-2.tstatic.net/banjarmasin/foto/bank/images/akrobat-bocah-2-tahun_20151229_102409.jpg",
+  "kalori": 90,
+  "protein": 8,
+  "lemak": 3.6,
+  "karbohidrat": 6.3
+}
+
+###
+POST http://localhost:3000/api/mpasi
+Content-Type: application/json
+
+{
+  "makanan": "Bola Nasi",
+  "porsi": 3,
+  "bahan": {
+    "Nasi": "75 gram",
+    "Daging ayam, giling": "50 gram",
+    "Tahu": "20 gram",
+    "Telur, kocok": "1 buah",
+    "Tepung Maizena": "2 sdm",
+    "Wortel Parut" : "1 siung",
+    "Tepung roti" : "secukupnya",
+    "Minyak kedelai" : "secukupnya"
+  },
+  "cara_masak": [
+    "1. Campurkan nasi, tahu, wortel, tepung maizena, daging ayam giling, bumbu halus, dan telur kocok",
+    "2. Bentuk adonan menjadi bola, lalu kukus selama 15 menit hingga adonan matang",
+    "3. Celupkan bola nasi ke dalam telur kocok, lalu gulirkan ke dalam tepung roti hingga semua permukaannya tertutup",
+    "4. Goreng hingga berubah warna dan matang"
+  ],
+  "kategori": "9-12 bulan",
+  "gambar": "https://asset-2.tstatic.net/banjarmasin/foto/bank/images/akrobat-bocah-2-tahun_20151229_102409.jpg",
+  "kalori": 142,
+  "protein": 5.7,
+  "lemak": 8.3,
+  "karbohidrat": 11
+}
+
+###
+POST http://localhost:3000/api/mpasi
+Content-Type: application/json
+
+{
+  "makanan": "Tim Mie Ayam",
+  "porsi": 3,
+  "bahan": {
+    "Mie telur, rebus hingga matang": "150 gram",
+    "Daging ayam, cincang": "75 gram",
+    "Tahu": "20 gram",
+    "Telur ayam": "1 butir",
+    "Kaldu ayam": "200 ml",
+    "Kecap asin" : "1 sdt",
+    "Kecap manis" : "1 sdt",
+    "Sawi, iris kecil" : "30 gram",
+    "Minyak Canola" : "10 ml",
+    "Daun seledri": "secukupnya"
+  },
+  "cara_masak": [
+    "1. Campurkan mie telur yang sudah matang dengan bumbu halus, kecap asin, kecap manis, telur ayam kocok, kaldu ayam, dan daging ayam cincang. Aduk hingga tercampur rata. Tambahkan minyak canola",
+    "2. Masukkan campuran mie ke dalam wadah tahan panas, lalu kukus hingga kaldu terserap mie",
+    "3. Tambahkan irisan seledri dan sawi, lalu kukus kembali hingga matang",
+    "4. Goreng hingga berubah warna dan matang"
+  ],
+  "kategori": "9-12 bulan",
+  "gambar": "https://img-global.cpcdn.com/recipes/a6a7786a65dfec53/680x482cq70/tim-mie-ayam-mpasi-10m-foto-resep-utama.webp",
+  "kalori": 150,
+  "protein": 6.5,
+  "lemak": 6.8,
+  "karbohidrat": 15
+}
