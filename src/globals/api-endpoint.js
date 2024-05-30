@@ -1,9 +1,5 @@
 const CONFIG = {
   BASE_URL: 'http://localhost:3000',
-  // CACHE_NAME: new Date().toISOString(),
-  // DATABASE_NAME: 'mpasi-database',
-  // DATABASE_VERSION: 1,
-  // OBJECT_STORE_NAME: 'mpasi',
 };
 
 const API_ENDPOINT = {

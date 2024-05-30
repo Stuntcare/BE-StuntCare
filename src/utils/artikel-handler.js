@@ -1,7 +1,8 @@
 /* eslint-disable import/no-unresolved */
 /* eslint-disable no-undef */
 /* eslint-disable no-console */
-const BASE_URL = 'http://localhost:3000';
+// const BASE_URL = 'http://localhost:3000';
+const BASE_URL = 'https://stuntcare.cleverapps.io';
 
 const createArtikel = async () => {
   const tambahDataForm = document.getElementById('tambahArtikelForm');

@@ -50,62 +50,84 @@
         <form id="tambahMpasiForm">
             <div class="modal-content">
                 <div class="modal-header">
-                <h1 class="modal-title" id="exampleModalLabel">Tambah Data</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <h1 class="modal-title" id="exampleModalLabel">Tambah Data</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                <div class="row">
-                    <div class="col-md-6">
-                    <div class="mb-3">
-                        <label for="inputMakanan" class="form-label">Makanan</label>
-                        <input type="text" class="form-control" id="inputMakanan" placeholder="Masukkan nama makanan" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="inputPorsi" class="form-label">Porsi</label>
-                        <input type="number" class="form-control" id="inputPorsi" placeholder="Masukkan jumlah porsi" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="inputBahan" class="form-label">Bahan</label>
-                        <textarea class="form-control" id="inputBahan" rows="5" placeholder='Masukkan bahan-bahan dalam format JSON (Contoh: {"Kentang": "50gr", "Telur": "1 butir", "Kaldu Sapi": "50 ml"})' required></textarea>
-                    </div>
-                    <div class="mb-3">
-                        <label for="inputKandungan" class="form-label">Kandungan</label>
-                        <textarea class="form-control" id="inputKandungan" rows="5" placeholder='Masukkan kandungan nutrisi dalam format JSON (Contoh: {"Kalori": "100 kkal", "Protein": "6 gr", "Lemak": "3,5 gr", "Karbohidrat": "7,8 gr"})' required></textarea>
-                    </div>
-                    </div>
-                    <div class="col-md-6">
-                    <div class="mb-3">
-                        <label for="inputCaraMasak" class="form-label">Cara Masak</label>
-                        <div id="caraMasakContainer">
-                        <input type="text" class="form-control mb-2" name="caraMasak[]" placeholder="Masukkan cara memasak" required>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="inputMakanan" class="form-label">Makanan</label>
+                                <input type="text" class="form-control" id="inputMakanan" placeholder="Masukkan nama makanan" autocomplete="off" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="inputPorsi" class="form-label">Porsi</label>
+                                <input type="number" class="form-control" id="inputPorsi" placeholder="Masukkan jumlah porsi" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="inputBahan" class="form-label">Bahan</label>
+                                <div id="bahanContainer">
+                                    <div class="input-group mb-2 bahanInput">
+                                        <input type="text" class="form-control" name="bahanKey[]" placeholder="Masukkan nama bahan" autocomplete="off" required>
+                                        <input type="text" class="form-control" name="bahanValue[]" placeholder="Masukkan jumlah" autocomplete="off" required>
+                                        <button type="button" class="btn btn-danger removeBahanButton">×</button>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-secondary" id="addBahanButton">Tambah Bahan</button>
+                                <div class="mb-3 mt-3">
+                                    <label for="inputKalori" class="form-label">Kalori <small>(kkal)</small></label>
+                                    <input type="number" step="0.1" class="form-control" id="inputKalori" placeholder="Masukkan jumlah kalori" autocomplete="off" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="inputProtein" class="form-label">Protein <small>(gram)</small></label>
+                                    <input type="number" step="0.1" class="form-control" id="inputProtein" placeholder="Masukkan jumlah protein" autocomplete="off" required>
+                                </div>
+                                
+                            </div>
                         </div>
-                        <button type="button" class="btn btn-secondary" id="addCaraMasakButton">Tambah Cara Masak</button>
-                    </div>                    
-                    <div class="mb-3">
-                        <label for="inputKategori" class="form-label">Kategori</label>
-                        <select class="form-select" id="inputKategori" required>
-                          <option value="" disabled selected>Pilih Kategori</option>
-                          <option value="semua">Semua Kategori</option>
-                          <option value="6-8 bulan">6-8 bulan</option>
-                          <option value="9-12 bulan">9-12 bulan</option>
-                          <option value="12-24 bulan">12-24 bulan</option>
-                        </select>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="inputCaraMasak" class="form-label">Cara Masak</label>
+                                <div id="caraMasakContainer">
+                                    <input type="text" class="form-control mb-2" name="caraMasak[]" placeholder="Masukkan cara memasak" autocomplete="off" required>
+                                </div>
+                                <button type="button" class="btn btn-secondary" id="addCaraMasakButton">Tambah Cara Masak</button>
+                            </div>
+                            <div class="mb-3">
+                                <label for="inputKategori" class="form-label">Kategori</label>
+                                <select class="form-select" id="inputKategori" required>
+                                    <option value="" disabled selected>Pilih Kategori</option>
+                                    <option value="semua">Semua Kategori</option>
+                                    <option value="6-8 bulan">6-8 bulan</option>
+                                    <option value="9-12 bulan">9-12 bulan</option>
+                                    <option value="12-24 bulan">12-24 bulan</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="inputGambar" class="form-label">URL Gambar</label>
+                                <input type="text" class="form-control" id="inputGambar" placeholder="Masukkan URL gambar" autocomplete="off" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="inputLemak" class="form-label">Lemak <small>(gram)</small></label>
+                                <input type="number" step="0.1" class="form-control" id="inputLemak" placeholder="Masukkan jumlah lemak" autocomplete="off" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="inputKarbohidrat" class="form-label">Karbohidrat <small>(gram)</small></label>
+                                <input type="number" step="0.1" class="form-control" id="inputKarbohidrat" placeholder="Masukkan jumlah karbohidrat" autocomplete="off" required>
+                            </div>
+                            
+                        </div>
                     </div>
-                    <div class="mb-3">
-                        <label for="inputGambar" class="form-label">URL Gambar</label>
-                        <input type="text" class="form-control" id="inputGambar" placeholder="Masukkan URL gambar" required>
-                    </div>
-                    </div>
-                </div>
                 </div>
                 <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
                 </div>
             </div>
         </form>
     </div>
 </div>
+
 
 <!-- Edit Modal -->
 <div class="modal fade" id="editDataMpasi" tabindex="-1" aria-labelledby="editDataMpasiLabel" aria-hidden="true">
@@ -122,7 +144,7 @@
                             <input type="hidden" id="editId">
                             <div class="mb-3">
                                 <label for="editMakanan" class="form-label">Makanan</label>
-                                <input type="text" class="form-control" id="editMakanan" placeholder="Masukkan nama makanan" required>
+                                <input type="text" class="form-control" id="editMakanan" placeholder="Masukkan nama makanan" autocomplete="off" required>
                             </div>
                             <div class="mb-3">
                                 <label for="editPorsi" class="form-label">Porsi</label>
@@ -130,7 +152,23 @@
                             </div>
                             <div class="mb-3">
                                 <label for="editBahan" class="form-label">Bahan</label>
-                                <textarea class="form-control" id="editBahan" rows="5" placeholder='Masukkan bahan-bahan dalam format JSON (Contoh: {"Kentang": "50gr", "Telur": "1 butir", "Kaldu Sapi": "50 ml"})' required></textarea>
+                                <textarea class="form-control" id="editBahan" rows="5" placeholder='Masukkan bahan-bahan dalam format JSON (Contoh: {"Kentang": "50gr", "Telur": "1 butir", "Kaldu Sapi": "50 ml"})' autocomplete="off" required></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editKalori" class="form-label">Kalori <small>(kkal)</small></label>
+                                <input type="number" step="0.1" class="form-control" id="editKalori" placeholder="Masukkan jumlah kalori" autocomplete="off" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editProtein" class="form-label">Protein <small>(gram)</small></label>
+                                <input type="number" step="0.1" class="form-control" id="editProtein" placeholder="Masukkan jumlah protein" autocomplete="off" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editLemak" class="form-label">Lemak <small>(gram)</small></label>
+                                <input type="number" step="0.1" class="form-control" id="editLemak" placeholder="Masukkan jumlah lemak" autocomplete="off" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editKarbohidrat" class="form-label">Karbohidrat <small>(gram)</small></label>
+                                <input type="number" step="0.1" class="form-control" id="editKarbohidrat" placeholder="Masukkan jumlah karbohidrat" autocomplete="off" required>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -138,28 +176,24 @@
                                 <label for="editCaraMasak" class="form-label">Cara Masak</label>
                                 <div id="editCaraMasakContainer">
                                     <div class="input-group mb-2 editCaraMasakInput">
-                                        <input type="text" class="form-control" name="editCaraMasak[]" placeholder="Masukkan cara memasak" required>
-                                        <button type="button" class="btn btn-danger removeEditCaraMasakButton" disabled>&times;</button>
+                                        <input type="text" class="form-control" name="editCaraMasak[]" placeholder="Masukkan cara memasak" autocomplete="off" required>
+                                        <button type="button" class="btn btn-danger removeEditCaraMasakButton">&times;</button>
                                     </div>
                                 </div>
                                 <button type="button" class="btn btn-secondary" id="addEditCaraMasakButton">Tambah Cara Masak</button>
                             </div>
                             <div class="mb-3">
-                                <label for="editKandungan" class="form-label">Kandungan</label>
-                                <textarea class="form-control" id="editKandungan" rows="5" placeholder='Masukkan kandungan nutrisi dalam format JSON (Contoh: {"Kalori": "100 kkal", "Protein": "6 gr", "Lemak": "3,5 gr", "Karbohidrat": "7,8 gr"})' required></textarea>
-                            </div>
-                            <div class="mb-3">
                                 <label for="editKategori" class="form-label">Kategori</label>
                                 <select class="form-select" id="editKategori" required>
-                                  <option value="semua">Semua Kategori</option>
-                                  <option value="6-8 bulan">6-8 bulan</option>
-                                  <option value="9-12 bulan">9-12 bulan</option>
-                                  <option value="12-24 bulan">12-24 bulan</option>
+                                    <option value="semua">Semua Kategori</option>
+                                    <option value="6-8 bulan">6-8 bulan</option>
+                                    <option value="9-12 bulan">9-12 bulan</option>
+                                    <option value="12-24 bulan">12-24 bulan</option>
                                 </select>
                             </div>                              
                             <div class="mb-3">
                                 <label for="editGambar" class="form-label">URL Gambar</label>
-                                <input type="text" class="form-control" id="editGambar" placeholder="Masukkan URL gambar" required>
+                                <input type="text" class="form-control" id="editGambar" placeholder="Masukkan URL gambar" autocomplete="off" required>
                             </div>
                         </div>
                     </div>

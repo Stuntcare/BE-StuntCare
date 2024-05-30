@@ -13,7 +13,11 @@ const createMpasiValidation = Joi.object({
     Joi.string().optional(),
   ).optional(),
   kategori: Joi.string().required(),
-  gambar: Joi.string().uri().optional(),
+  gambar: Joi.string().uri().required(),
+  kalori: Joi.number().min(0).optional(),
+  protein: Joi.number().min(0).optional(),
+  lemak: Joi.number().min(0).optional(),
+  karbohidrat: Joi.number().min(0).optional(),
 });
 
 const updateMpasiValidation = Joi.object({
@@ -30,6 +34,10 @@ const updateMpasiValidation = Joi.object({
   ).optional(),
   kategori: Joi.string().optional(),
   gambar: Joi.string().uri().optional(),
+  kalori: Joi.number().min(0).optional(),
+  protein: Joi.number().min(0).optional(),
+  lemak: Joi.number().min(0).optional(),
+  karbohidrat: Joi.number().min(0).optional(),
 });
 
 const getMpasiValidation = Joi.number().positive().required();

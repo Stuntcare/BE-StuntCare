@@ -3,29 +3,48 @@
 /* eslint-disable no-undef */
 
 /* eslint-disable no-console */
-const BASE_URL = 'http://localhost:3000';
+// const BASE_URL = 'http://localhost:3000';
+const BASE_URL = 'https://stuntcare.cleverapps.io';
 
 const createMpasi = async () => {
   const tambahDataForm = document.getElementById('tambahMpasiForm');
   const addCaraMasakButton = document.getElementById('addCaraMasakButton');
   const caraMasakContainer = document.getElementById('caraMasakContainer');
+  const addBahanButton = document.getElementById('addBahanButton');
+  const bahanContainer = document.getElementById('bahanContainer');
+
+  const addInputGroup = (container, inputGroupHTML) => {
+    container.insertAdjacentHTML('beforeend', inputGroupHTML);
+    const newInputGroup = container.lastElementChild;
+    const removeButton = newInputGroup.querySelector('.removeButton');
+
+    removeButton.addEventListener('click', () => {
+      container.removeChild(newInputGroup);
+    });
+  };
 
   if (addCaraMasakButton) {
     addCaraMasakButton.addEventListener('click', () => {
       const newInputGroupHTML = `
         <div class="input-group mb-2 caraMasakInput">
           <input type="text" class="form-control" name="caraMasak[]" placeholder="Masukkan cara memasak" required>
-          <button type="button" class="btn btn-danger removeCaraMasakButton">×</button>
+          <button type="button" class="btn btn-danger removeButton">×</button>
         </div>
       `;
+      addInputGroup(caraMasakContainer, newInputGroupHTML);
+    });
+  }
 
-      caraMasakContainer.insertAdjacentHTML('beforeend', newInputGroupHTML);
-      const newInputGroup = caraMasakContainer.lastElementChild;
-      const removeButton = newInputGroup.querySelector('.removeCaraMasakButton');
-
-      removeButton.addEventListener('click', () => {
-        caraMasakContainer.removeChild(newInputGroup);
-      });
+  if (addBahanButton) {
+    addBahanButton.addEventListener('click', () => {
+      const newInputGroupHTML = `
+        <div class="input-group mb-2 bahanInput">
+          <input type="text" class="form-control" name="bahanKey[]" placeholder="Masukkan nama bahan" required>
+          <input type="text" class="form-control" name="bahanValue[]" placeholder="Masukkan jumlah" required>
+          <button type="button" class="btn btn-danger removeButton">×</button>
+        </div>
+      `;
+      addInputGroup(bahanContainer, newInputGroupHTML);
     });
   }
 
@@ -34,8 +53,13 @@ const createMpasi = async () => {
       e.preventDefault();
 
       try {
-        const bahan = JSON.parse(document.getElementById('inputBahan').value);
-        const kandungan = JSON.parse(document.getElementById('inputKandungan').value);
+        const bahanKeys = document.getElementsByName('bahanKey[]');
+        const bahanValues = document.getElementsByName('bahanValue[]');
+        const bahan = {};
+        for (let i = 0; i < bahanKeys.length; i += 1) {
+          bahan[bahanKeys[i].value] = bahanValues[i].value;
+        }
+
         const caraMasakInputs = document.getElementsByName('caraMasak[]');
         const caraMasak = Array.from(caraMasakInputs).map((input) => input.value);
 
@@ -44,9 +68,12 @@ const createMpasi = async () => {
           porsi: document.getElementById('inputPorsi').value,
           bahan,
           cara_masak: caraMasak,
-          kandungan,
           kategori: document.getElementById('inputKategori').value,
           gambar: document.getElementById('inputGambar').value,
+          kalori: parseFloat(document.getElementById('inputKalori').value),
+          protein: parseFloat(document.getElementById('inputProtein').value),
+          lemak: parseFloat(document.getElementById('inputLemak').value),
+          karbohidrat: parseFloat(document.getElementById('inputKarbohidrat').value),
         };
 
         console.log('Data yang dikirim:', mpasiData);
@@ -69,14 +96,14 @@ const createMpasi = async () => {
 
         await Swal.fire({
           title: 'Berhasil!',
-          text: 'Data mpasi berhasil disimpan.',
+          text: 'Data MPASI berhasil disimpan.',
           icon: 'success',
           confirmButtonText: 'OK',
         });
         window.location.reload();
       } catch (error) {
         console.error('Error:', error);
-        Swal.fire({
+        await Swal.fire({
           title: 'Error!',
           text: 'Terjadi kesalahan saat menyimpan data.',
           icon: 'error',
@@ -143,19 +170,21 @@ const updateMpasi = async (id) => {
     const mpasi = await getResponse.json();
 
     const bahanString = JSON.stringify(mpasi.data.bahan, null, 2);
-    const kandunganString = JSON.stringify(mpasi.data.kandungan, null, 2);
     const cleanedBahanString = bahanString.replace(/\\/g, '').slice(1, -1);
-    const cleanedKandunganString = kandunganString.replace(/\\/g, '').slice(1, -1);
 
+    document.getElementById('editId').value = id;
     document.getElementById('editMakanan').value = mpasi.data.makanan;
     document.getElementById('editPorsi').value = mpasi.data.porsi;
     document.getElementById('editBahan').value = cleanedBahanString;
-    document.getElementById('editKandungan').value = cleanedKandunganString;
+    document.getElementById('editKalori').value = mpasi.data.kalori;
+    document.getElementById('editProtein').value = mpasi.data.protein;
+    document.getElementById('editLemak').value = mpasi.data.lemak;
+    document.getElementById('editKarbohidrat').value = mpasi.data.karbohidrat;
     document.getElementById('editKategori').value = mpasi.data.kategori;
     document.getElementById('editGambar').value = mpasi.data.gambar;
 
     const editCaraMasakContainer = document.getElementById('editCaraMasakContainer');
-    addEditCaraMasakButton = document.getElementById('addEditCaraMasakButton');
+    const addEditCaraMasakButton = document.getElementById('addEditCaraMasakButton');
     editCaraMasakContainer.innerHTML = '';
     const masak = JSON.parse(mpasi.data.cara_masak);
 
@@ -163,9 +192,9 @@ const updateMpasi = async (id) => {
       const inputGroup = document.createElement('div');
       inputGroup.className = 'input-group mb-2 editCaraMasakInput';
       inputGroup.innerHTML = `
-            <input type="text" class="form-control" name="editCaraMasak[]" placeholder="Masukkan cara memasak" value="${caraMasak}" required>
-            <button type="button" class="btn btn-danger removeEditCaraMasakButton">×</button>
-        `;
+        <input type="text" class="form-control" name="editCaraMasak[]" placeholder="Masukkan cara memasak" value="${caraMasak}" required>
+        <button type="button" class="btn btn-danger removeEditCaraMasakButton">×</button>
+      `;
       editCaraMasakContainer.appendChild(inputGroup);
       const removeButton = inputGroup.querySelector('.removeEditCaraMasakButton');
       removeButton.addEventListener('click', () => {
@@ -176,11 +205,11 @@ const updateMpasi = async (id) => {
     if (addEditCaraMasakButton) {
       addEditCaraMasakButton.addEventListener('click', () => {
         const newInputGroupHTML = `
-            <div class="input-group mb-2 editCaraMasakInput">
-                <input type="text" class="form-control" name="editCaraMasak[]" placeholder="Masukkan cara memasak" required>
-                <button type="button" class="btn btn-danger removeEditCaraMasakButton">×</button>
-            </div>
-            `;
+          <div class="input-group mb-2 editCaraMasakInput">
+            <input type="text" class="form-control" name="editCaraMasak[]" placeholder="Masukkan cara memasak" required>
+            <button type="button" class="btn btn-danger removeEditCaraMasakButton">×</button>
+          </div>
+        `;
         editCaraMasakContainer.insertAdjacentHTML('beforeend', newInputGroupHTML);
         const newInputGroup = editCaraMasakContainer.lastElementChild;
         const removeButton = newInputGroup.querySelector('.removeEditCaraMasakButton');
@@ -197,7 +226,6 @@ const updateMpasi = async (id) => {
 
         try {
           const bahan = JSON.parse(document.getElementById('editBahan').value);
-          const kandungan = JSON.parse(document.getElementById('editKandungan').value);
           const caraMasakInputs = document.getElementsByName('editCaraMasak[]');
           const caraMasak = Array.from(caraMasakInputs).map((input) => input.value);
 
@@ -206,7 +234,10 @@ const updateMpasi = async (id) => {
             porsi: document.getElementById('editPorsi').value,
             bahan,
             cara_masak: caraMasak,
-            kandungan,
+            kalori: parseFloat(document.getElementById('editKalori').value),
+            protein: parseFloat(document.getElementById('editProtein').value),
+            lemak: parseFloat(document.getElementById('editLemak').value),
+            karbohidrat: parseFloat(document.getElementById('editKarbohidrat').value),
             kategori: document.getElementById('editKategori').value,
             gambar: document.getElementById('editGambar').value,
           };
@@ -226,7 +257,9 @@ const updateMpasi = async (id) => {
             throw new Error(`Network response was not ok: ${errorText}`);
           }
 
-          console.log('Data berhasil diupdate:', response);
+          const result = await response.json();
+          console.log('Data berhasil diupdate:', result);
+
           await Swal.fire({
             title: 'Berhasil!',
             text: 'Data mpasi berhasil diupdate.',
@@ -360,9 +393,6 @@ const filter = async () => {
 
 document.addEventListener('DOMContentLoaded', () => {
   createMpasi();
-});
-
-document.addEventListener('DOMContentLoaded', () => {
   attachEventListeners();
   search();
   filter();
