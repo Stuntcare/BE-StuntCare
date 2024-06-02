@@ -56,7 +56,11 @@ Content-Type: application/json
     "Angkat dan biarkan dingin sebelum disajikan kepada bayi."
   ],
   "kategori": "6-8 bulan",
-  "gambar": "https://link.perubahan.com"
+  "gambar": "https://link.perubahan.com",
+  "kalori": 100,
+  "protein": 6,
+  "lemak": 3.5,
+  "karbohidrat": 7.8
 }
 
 ###
@@ -81,7 +85,7 @@ POST http://localhost:3000/api/artikel
 Content-Type: application/json
 
 {
-  "judul" : "apa penyebab kekurangan gizi pada anak",
+  "judul" : "Apa penyebab kekurangan gizi pada anak",
   "deskripsi" : "Stunting adalah kondisi terhambatnya pertumbuhan fisik dan perkembangan otak pada anak-anak, biasanya disebabkan oleh kurangnya asupan gizi yang memadai dan infeksi pada masa awal kehidupan",
   "tanggal": "2024-05-14",
   "sumber": "http://sumber.com",

@@ -3,8 +3,8 @@
 /* eslint-disable no-undef */
 
 /* eslint-disable no-console */
-// const BASE_URL = 'http://localhost:3000';
-const BASE_URL = 'https://stuntcare.cleverapps.io';
+const BASE_URL = 'http://localhost:3000';
+// const BASE_URL = 'https://stuntcare.cleverapps.io';
 
 const createMpasi = async () => {
   const tambahDataForm = document.getElementById('tambahMpasiForm');
@@ -159,7 +159,6 @@ const deleteMpasi = async (id) => {
 
 const updateMpasi = async (id) => {
   try {
-    console.log('Update Mpasi:', id);
     const getResponse = await fetch(`${BASE_URL}/api/mpasi/${id}`);
     if (!getResponse.ok) {
       const errorText = await getResponse.text();
@@ -186,7 +185,8 @@ const updateMpasi = async (id) => {
     const editCaraMasakContainer = document.getElementById('editCaraMasakContainer');
     const addEditCaraMasakButton = document.getElementById('addEditCaraMasakButton');
     editCaraMasakContainer.innerHTML = '';
-    const masak = JSON.parse(mpasi.data.cara_masak);
+    masak = mpasi.data.cara_masak;
+    // const masak = JSON.parse(mpasi.data.cara_masak);
 
     masak.forEach((caraMasak) => {
       const inputGroup = document.createElement('div');
