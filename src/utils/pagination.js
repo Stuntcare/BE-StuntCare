@@ -95,7 +95,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 `;
                 mpasiListDiv.appendChild(mpasiItem);
               });
-              // Reattach event listeners to the new buttons
               addEventListenersToButtons();
             } else {
               console.error('Data received is not an array:', data.data);
