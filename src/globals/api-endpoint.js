@@ -1,5 +1,6 @@
 const CONFIG = {
   BASE_URL: 'http://localhost:3000',
+  // BASE_URL: 'https://stuntcare.cleverapps.io',
 };
 
 const API_ENDPOINT = {

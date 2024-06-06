@@ -75,6 +75,9 @@ GET http://localhost:3000/api/mpasi?limit=30,kategori=6-8 bulan
 ###
 GET http://localhost:3000/api/mpasi?q=bubur
 
+###
+GET http://localhost:3000/api/mpasi?page=2
+
 
 
 
@@ -90,7 +93,7 @@ Content-Type: application/json
   "tanggal": "2024-05-14",
   "sumber": "http://sumber.com",
   "gambar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFV4oRjeIPLpkuKodp6Vpi5_dsr0_wz-D7uuuNz5zglw&s",
-  "kategori": "Semua"
+  "kategori": "6-8 bulan"
 }
 
 ###
@@ -99,7 +102,7 @@ Content-Type: application/json
 
 ###
 # halaman selanjutnya
-GET http://localhost:3000/api/artikel?page=2&limit=12
+GET http://localhost:3000/api/artikel?page=2&limit=6
 Content-Type: application/json
 
 ###
@@ -148,8 +151,8 @@ POST http://localhost:3000/users/login
 Content-Type: application/json
 
 {
-  "email": "ma@gmail.com",
-  "password": "mantap"
+  "email": "baru@example.com",
+  "password": "password123"
 }
 
 ###

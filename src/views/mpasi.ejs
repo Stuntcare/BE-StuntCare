@@ -119,20 +119,8 @@
     <!-- Pagination -->
     <div id="pagination">
         <% if (pages > 1) { %>
-            <% if (page > 1) { %>
-                <a class="pagination-button" href="/api/mpasi?page=1&limit=<%= limit %>">First</a>
-            <% } %>
-            <% if (page > 1) { %>
-                <a class="pagination-button" href="/api/mpasi?page=<%= page - 1 %>&limit=<%= limit %>">Previous</a>
-            <% } %>
             <% for (let i = 1; i <= pages; i++) { %>
                 <a class="pagination-button <% if (page === i) { %>active<% } %>" href="/api/mpasi?page=<%= i %>&limit=<%= limit %>"><%= i %></a>
-            <% } %>
-            <% if (page < pages) { %>
-                <a class="pagination-button" href="/api/mpasi?page=<%= page + 1 %>&limit=<%= limit %>">Next</a>
-            <% } %>
-            <% if (page < pages) { %>
-                <a class="pagination-button" href="/api/mpasi?page=<%= pages %>&limit=<%= limit %>">Last</a>
             <% } %>
         <% } %>
     </div>

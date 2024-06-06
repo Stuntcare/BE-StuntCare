@@ -1,8 +1,4 @@
-/* eslint-disable import/no-unresolved */
 /* eslint-disable no-undef */
-/* eslint-disable no-console */
-const BASE_URL = 'http://localhost:3000';
-// const BASE_URL = 'https://stuntcare.cleverapps.io';
 
 const createArtikel = async () => {
   const tambahDataForm = document.getElementById('tambahArtikelForm');
@@ -20,8 +16,7 @@ const createArtikel = async () => {
           gambar: document.getElementById('inputGambar').value,
         };
 
-        console.log('Data yang dikirim:', artikelData);
-        const response = await fetch(`${BASE_URL}/api/artikel`, {
+        const response = await fetch('/api/artikel', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -31,12 +26,8 @@ const createArtikel = async () => {
 
         if (!response.ok) {
           const errorText = await response.text();
-          console.error('Error:', errorText);
           throw new Error(`Network response was not ok: ${errorText}`);
         }
-
-        const result = await response.json();
-        console.log('Data berhasil disimpan:', result);
 
         await Swal.fire({
           title: 'Berhasil!',
@@ -47,7 +38,6 @@ const createArtikel = async () => {
 
         window.location.reload();
       } catch (error) {
-        console.error('Error:', error);
         Swal.fire({
           title: 'Error!',
           text: 'Terjadi kesalahan saat menyimpan data.',
@@ -60,8 +50,6 @@ const createArtikel = async () => {
 };
 
 const deleteArtikel = async (id) => {
-  console.log('Delete Artikel:', id);
-
   const result = await Swal.fire({
     title: 'Apakah Anda yakin?',
     text: 'Anda tidak akan dapat mengembalikan data ini!',
@@ -73,17 +61,14 @@ const deleteArtikel = async (id) => {
 
   if (result.isConfirmed) {
     try {
-      const response = await fetch(`${BASE_URL}/api/artikel/${id}`, {
+      const response = await fetch(`/api/artikel/${id}`, {
         method: 'DELETE',
       });
 
       if (!response.ok) {
         const errorText = await response.text();
-        console.error('Error:', errorText);
         throw new Error(`Network response was not ok: ${errorText}`);
       }
-
-      console.log('Data berhasil dihapus:', result);
 
       await Swal.fire({
         title: 'Berhasil!',
@@ -94,7 +79,6 @@ const deleteArtikel = async (id) => {
 
       window.location.reload();
     } catch (error) {
-      console.error('Error:', error);
       Swal.fire({
         title: 'Error!',
         text: 'Terjadi kesalahan saat menghapus data.',
@@ -107,10 +91,9 @@ const deleteArtikel = async (id) => {
 
 const updateArtikel = async (id) => {
   try {
-    const getResponse = await fetch(`${BASE_URL}/api/artikel/${id}`);
+    const getResponse = await fetch(`/api/artikel/${id}`);
     if (!getResponse.ok) {
       const errorText = await getResponse.text();
-      console.error('Error:', errorText);
       throw new Error(`Network getResponse was not ok: ${errorText}`);
     }
 
@@ -147,8 +130,7 @@ const updateArtikel = async (id) => {
           gambar: document.getElementById('editGambar').value,
         };
 
-        console.log('Data yang dikirim:', artikelData);
-        const response = await fetch(`${BASE_URL}/api/artikel/${id}`, {
+        const response = await fetch(`/api/artikel/${id}`, {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json',
@@ -158,12 +140,8 @@ const updateArtikel = async (id) => {
 
         if (!response.ok) {
           const errorText = await response.text();
-          console.error('Error:', errorText);
           throw new Error(`Network response was not ok: ${errorText}`);
         }
-
-        const result = await response.json();
-        console.log('Data berhasil diupdate:', result);
 
         await Swal.fire({
           title: 'Berhasil!',
@@ -174,7 +152,6 @@ const updateArtikel = async (id) => {
 
         window.location.reload();
       } catch (error) {
-        console.error('Error:', error);
         Swal.fire({
           title: 'Error!',
           text: 'Terjadi kesalahan saat mengupdate data.',
@@ -184,7 +161,6 @@ const updateArtikel = async (id) => {
       }
     });
   } catch (error) {
-    console.error('Error:', error);
     Swal.fire({
       title: 'Error!',
       text: 'Terjadi kesalahan saat mengambil data.',
@@ -195,7 +171,6 @@ const updateArtikel = async (id) => {
 };
 
 const attachEventListeners = () => {
-  // Attach delete event listeners
   const deleteButtons = document.querySelectorAll('#delete-button');
   deleteButtons.forEach((button) => {
     button.addEventListener('click', () => {
@@ -204,7 +179,6 @@ const attachEventListeners = () => {
     });
   });
 
-  // Attach edit event listeners
   const editButtons = document.querySelectorAll('#edit-button');
   editButtons.forEach((button) => {
     button.addEventListener('click', () => {
@@ -256,10 +230,20 @@ const loadPageData = async (pageUrl) => {
         `;
       }
     } else {
-      console.error('Error:', data.message);
+      Swal.fire({
+        title: 'Error!',
+        text: 'Terjadi kesalahan saat memuat data.',
+        icon: 'error',
+        confirmButtonText: 'OK',
+      });
     }
   } catch (error) {
-    console.error('Error:', error);
+    Swal.fire({
+      title: 'Error!',
+      text: 'Terjadi kesalahan saat memuat data.',
+      icon: 'error',
+      confirmButtonText: 'OK',
+    });
   }
 };
 
@@ -283,7 +267,7 @@ const searchArtikel = async () => {
     searchForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       const keyword = document.getElementById('searchKeyword').value;
-      const searchUrl = `${BASE_URL}/api/artikel?q=${keyword}`;
+      const searchUrl = `/api/artikel?q=${keyword}`;
       await loadPageData(searchUrl);
     });
   }
@@ -294,7 +278,7 @@ const filterArtikel = async () => {
   if (filterKategori) {
     filterKategori.addEventListener('change', async (e) => {
       const keyword = e.target.value;
-      let filterUrl = `${BASE_URL}/api/artikel`;
+      let filterUrl = '/api/artikel';
       if (keyword !== 'semua') {
         filterUrl = `${filterUrl}?kategori=${keyword}`;
         // filterUrl = `${filterUrl}?limit=30,kategori=${keyword}`;

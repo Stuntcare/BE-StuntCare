@@ -824,7 +824,7 @@ h6 {
   display: inline-block;
   padding: 8px 12px;
   margin: 0 5px;
-  background-color: #4caf50;
+  background-color: #019973;
   color: white;
   text-decoration: none;
   border-radius: 4px;
@@ -832,7 +832,7 @@ h6 {
 }
 
 .pagination-button:hover {
-  background-color: #45a049;
+  background-color: opacity(#019973, 0.8);
 }
 
 .form-label{

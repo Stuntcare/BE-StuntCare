@@ -1,0 +1,30 @@
+// 1. CRUD Artikel
+###
+POST http://localhost:3000/api/artikel
+Content-Type: application/json
+
+{
+  "judul": "Apa itu Stunting",
+  "deskripsi": "Stunting adalah gangguan pertumbuhan yang terjadi pada anak-anak di bawah 5 tahun dan memiliki dampak terhadap pertumbuhan fisik mereka. Sebagian orang, mungkin belum familiar dengan istilah ini, tetapi kasus stunting sering terjadi di Indonesia.\n\nStunting adalah masalah kesehatan anak akibat gizi buruk, terutama jika berlangsung dalam jangka waktu yang lama. Faktor penyebabnya dapat berasal dari malnutrisi pada ibu hamil atau selama masa pertumbuhan anak.\n\nGejala stunting paling umum yang terlihat pada anak adalah tinggi badan yang lebih pendek dibandingkan dengan anak-anak sebaya. Meskipun postur tubuh anak dipengaruhi oleh berbagai faktor, stunting menunjukkan adanya keterlambatan pertumbuhan yang memerlukan perhatian serius. Untuk informasi lebih lanjut, simak pembahasan selengkapnya di bawah ini.\n\nApa itu Stunting?\n\nStunting adalah kondisi yang ditandai dengan kurangnya tinggi badan anak apabila dibandingkan dengan anak-anak seusianya. Sederhananya, stunting merupakan sebutan bagi gangguan pertumbuhan pada anak.\n\nPenyebab utama dari stunting adalah malnutrisi pada ibu hamil dan kurangnya asupan nutrisi selama masa pertumbuhan anak. Banyak yang tidak menyadari bahwa tinggi pendeknya anak bisa menjadi tanda adanya masalah gizi kronis. Perlu diingat bahwa anak pendek belum tentu mengalami stunting. Namun anak yang mengidap kondisi ini pasti berperawakan pendek. Anak dengan asupan gizi terbatas sejak kecil dan telah berlangsung lama berisiko mengalami pertumbuhan yang terhambat.Menurut WHO, suatu negara dikatakan memiliki masalah stunting bila kasusnya mencapai angka di atas 20%. Sementara, di Indonesia, berdasarkan data Kemenkes pada tahun 2021, kasus balita stunting di Indonesia sebanyak 24,4% sehingga termasuk dalam masalah yang perlu ditangani.",
+  "tanggal": "2024-06-28",
+  "sumber": "https://www.siloamhospitals.com/informasi-siloam/artikel/apa-itu-stunting",
+  "gambar": "https://www.satujuang.com/wp-content/uploads/Compress_20240330_090732_2094-jpg.webp",
+  "kategori": "Semua kategori"
+}
+
+###
+
+POST http://localhost:3000/api/artikel
+Content-Type: application/json
+
+{
+  "judul": "Pencegahan Stunting",
+  "deskripsi": "Tindakan pencegahan stunting tentu lebih bijak dilaksanakan oleh semua orang di lingkungannya, terutama yang terdapat anak balita dan pasangan usia muda terhadap kemungkinan terjadinya stunting, daripada harus melakukan upaya penanganan setelah stunting itu terjadi. Biaya pencegahan stunting tentu lebih murah dan dampaknya tentu akan lebih terkendali, daripada apabila sudah terjadi stunting. Berikut ini beberapa langkah yang dapat dilakukan untuk mencegah stunting:\n\n1. Memenuhi kebutuhan gizi sejak hamil\n\nTindakan yang relatif ampuh dilakukan untuk mencegah stunting pada anak adalah selalu memenuhi gizi sejak masa kehamilan. Lembaga kesehatan Millenium Challenge Account Indonesia menyarankan agar ibu yang sedang mengandung selalu mengonsumsi makanan sehat nan bergizi maupun suplemen atas anjuran dokter. Selain itu, perempuan yang sedang menjalani proses kehamilan juga sebaiknya rutin memeriksakan kesehatannya ke dokter atau bidan.\n\n2. Beri Air Susu Ibu (ASI) Eksklusif sampai bayi berusia 6 bulan\n\nVeronika Scherbaum, ahli nutrisi dari Universitas Hohenheim, Jerman, menyatakan ASI ternyata berpotensi mengurangi peluang stunting pada anak berkat kandungan gizi mikro dan makro. Oleh karena itu, ibu disarankan untuk tetap memberikan ASI Eksklusif selama enam bulan kepada sang buah hati. Protein whey dan kolostrum yang terdapat pada susu ibu pun dinilai mampu meningkatkan sistem kekebalan tubuh bayi yang terbilang rentan.\n\n3. Dampingi ASI Eksklusif dengan Makanan Pendaping Air Susu Ibu (MPASI) sehat\n\nKetika bayi menginjak usia 6 bulan ke atas, maka ibu sudah bisa memberikan makanan pendamping atau MPASI. Dalam hal ini pastikan makanan-makanan yang dipilih bisa memenuhi gizi mikro dan makro yang sebelumnya selalu berasal dari ASI untuk mencegah stunting. WHO pun merekomendasikan fortifikasi atau penambahan nutrisi ke dalam makanan. Di sisi lain, sebaiknya ibu berhati-hati saat akan menentukan produk tambahan tersebut. Konsultasikan dulu dengan dokter.\n\n4. Terus memantau tumbuh kembang anak\n\nOrang tua perlu terus memantau tumbuh kembang anak mereka, terutama dari tinggi dan berat badan anak. Bawa si Kecil secara berkala ke Posyandu maupun klinik khusus anak. Dengan begitu, akan lebih mudah bagi ibu untuk mengetahui gejala awal gangguan dan penanganannya.\n\n5. Selalu jaga kebersihan lingkungan\n\nSeperti yang diketahui, anak-anak sangat rentan akan serangan penyakit, terutama kalau lingkungan sekitar mereka kotor. Faktor ini pula yang secara tak langsung meningkatkan peluang stunting. Studi yang dilakukan di Harvard Chan School menyebutkan diare adalah faktor ketiga yang menyebabkan gangguan kesehatan tersebut. Sementara salah satu pemicu diare datang dari paparan kotoran yang masuk ke dalam tubuh manusia.",
+  "tanggal": "2022-07-24",
+  "sumber": "https://www.djkn.kemenkeu.go.id/kpknl-ternate/baca-artikel/15305/Program-Penurunan-Stunting-Apa-Susahnya.html",
+  "gambar": "https://www.djkn.kemenkeu.go.id/files/images/2022/08/Stunting.jpg",
+  "kategori": "Semua kategori"
+}
+
+###
+
