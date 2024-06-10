@@ -11,9 +11,11 @@ router.get('/', (req, res) => {
 router.get('/dashboard', async (req, res) => {
   try {
     const mpasi = await MpasiSource.getAllMpasi();
+    const artikel = await ArtikelSource.getAllArtikel();
     res.render('dashboard', {
       title: 'Dashboard',
-      total: mpasi.total,
+      MpasiTotal: mpasi.total,
+      ArtikelTotal: artikel.total,
     });
   } catch (error) {
     res.status(500).send('Error Render dashboard data');

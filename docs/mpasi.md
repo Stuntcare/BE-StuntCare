@@ -281,7 +281,7 @@ Response Body Success :
     ],
     "kategori": "6-8 bulan",
     "gambar": "https://link.gambar.com",
-        "kalori": 100,
+    "kalori": 100,
     "protein": 6,
     "lemak": 3.5,
     "karbohidrat": 7.8,

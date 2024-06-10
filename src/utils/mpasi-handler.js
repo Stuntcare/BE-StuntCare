@@ -340,7 +340,7 @@ const loadPageData = async (pageUrl) => {
                 <h5 class="card-title">${mpasi.makanan}</h5>
                 <p class="card-text">${mpasi.kategori}</p>
                 <div class="d-flex justify-content-center">
-                  <button id="edit-button" class="btn px-4 btn-primary me-2" data-id="${mpasi.id}" data-bs-toggle="modal" data-bs-target="#editDataMpasi"><i class="bi bi-pencil"></i></button>
+                  <button id="edit-button" class="btn button-tambah px-4 me-2" data-id="${mpasi.id}" data-bs-toggle="modal" data-bs-target="#editDataMpasi"><i class="bi bi-pencil"></i></button>
                   <button id="delete-button" class="btn px-4 btn-danger" data-id="${mpasi.id}"><i class="bi bi-trash"></i></button>
                 </div>
               </div>

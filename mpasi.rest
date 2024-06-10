@@ -1,5 +1,5 @@
 // 1. CRUD Mpasi
-POST http://localhost:3000/api/mpasi
+POST https://api.stuntcare.muhammadferysyahputra.my.id/api/mpasi
 Content-Type: application/json
 
 {
@@ -26,7 +26,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:3000/api/mpasi
+POST https://api.stuntcare.muhammadferysyahputra.my.id/api/mpasi
 Content-Type: application/json
 
 {
@@ -56,7 +56,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:3000/api/mpasi
+POST https://api.stuntcare.muhammadferysyahputra.my.id/api/mpasi
 Content-Type: application/json
 
 {
@@ -85,7 +85,7 @@ Content-Type: application/json
   "karbohidrat": 6
 }
 ###
-POST http://localhost:3000/api/mpasi
+POST https://api.stuntcare.muhammadferysyahputra.my.id/api/mpasi
 Content-Type: application/json
 
 {
@@ -114,7 +114,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:3000/api/mpasi
+POST https://api.stuntcare.muhammadferysyahputra.my.id/api/mpasi
 Content-Type: application/json
 
 {
@@ -135,7 +135,7 @@ Content-Type: application/json
     "4. Ketika akan dicampur dengan nasi, ambil daun salam dan daun jeruknya. Lalu saring hingga teksturnya sesuai yang diinginkan."
   ],
   "kategori": "6-8 bulan",
-  "gambar": "https://asset-2.tstatic.net/banjarmasin/foto/bank/images/akrobat-bocah-2-tahun_20151229_102409.jpg",
+  "gambar": "https://asset-2.tstatic.net/lombok/foto/bank/images/Ilustrasi-bubur.jpg",
   "kalori": 90,
   "protein": 8,
   "lemak": 3.6,
@@ -143,7 +143,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:3000/api/mpasi
+POST https://api.stuntcare.muhammadferysyahputra.my.id/api/mpasi
 Content-Type: application/json
 
 {
@@ -174,7 +174,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:3000/api/mpasi
+POST https://api.stuntcare.muhammadferysyahputra.my.id/api/mpasi
 Content-Type: application/json
 
 {
@@ -206,7 +206,7 @@ Content-Type: application/json
   "karbohidrat": 15
 }
 ###
-POST http://localhost:3000/api/mpasi
+POST https://api.stuntcare.muhammadferysyahputra.my.id/api/mpasi
 Content-Type: application/json
 
 {
@@ -239,7 +239,7 @@ Content-Type: application/json
   "karbohidrat": 20
 }
 ###
-POST http://localhost:3000/api/mpasi
+POST https://api.stuntcare.muhammadferysyahputra.my.id/api/mpasi
 Content-Type: application/json
 
 {
@@ -266,7 +266,7 @@ Content-Type: application/json
   "karbohidrat": 13
 }
 ###
-POST http://localhost:3000/api/mpasi
+POST https://api.stuntcare.muhammadferysyahputra.my.id/api/mpasi
 Content-Type: application/json
 
 {
@@ -302,7 +302,7 @@ Content-Type: application/json
   "karbohidrat": 28.4
 }
 ###
-POST http://localhost:3000/api/mpasi
+POST https://api.stuntcare.muhammadferysyahputra.my.id/api/mpasi
 Content-Type: application/json
 
 {
@@ -333,7 +333,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:3000/api/mpasi
+POST https://api.stuntcare.muhammadferysyahputra.my.id/api/mpasi
 Content-Type: application/json
 
 {
@@ -367,7 +367,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:3000/api/mpasi
+POST https://api.stuntcare.muhammadferysyahputra.my.id/api/mpasi
 Content-Type: application/json
 
 {
@@ -401,7 +401,7 @@ Content-Type: application/json
   "karbohidrat": 24.2
 }
 ###
-POST http://localhost:3000/api/mpasi
+POST https://api.stuntcare.muhammadferysyahputra.my.id/api/mpasi
 Content-Type: application/json
 
 {
@@ -435,7 +435,7 @@ Content-Type: application/json
 
 // ? Belum Dipost
 ###
-POST http://localhost:3000/api/mpasi
+POST https://api.stuntcare.muhammadferysyahputra.my.id/api/mpasi
 Content-Type: application/json
 
 {
@@ -465,7 +465,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:3000/api/mpasi
+POST https://api.stuntcare.muhammadferysyahputra.my.id/api/mpasi
 Content-Type: application/json
 
 {
@@ -495,7 +495,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:3000/api/mpasi
+POST https://api.stuntcare.muhammadferysyahputra.my.id/api/mpasi
 Content-Type: application/json
 
 {
@@ -526,7 +526,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:3000/api/mpasi
+POST https://api.stuntcare.muhammadferysyahputra.my.id/api/mpasi
 Content-Type: application/json
 
 {
@@ -557,7 +557,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:3000/api/mpasi
+POST https://api.stuntcare.muhammadferysyahputra.my.id/api/mpasi
 Content-Type: application/json
 
 {
@@ -593,7 +593,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:3000/api/mpasi
+POST https://api.stuntcare.muhammadferysyahputra.my.id/api/mpasi
 Content-Type: application/json
 
 {
@@ -629,7 +629,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:3000/api/mpasi
+POST https://api.stuntcare.muhammadferysyahputra.my.id/api/mpasi
 Content-Type: application/json
 
 {
@@ -653,7 +653,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:3000/api/mpasi
+POST https://api.stuntcare.muhammadferysyahputra.my.id/api/mpasi
 Content-Type: application/json
 
 {
@@ -677,7 +677,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:3000/api/mpasi
+POST https://api.stuntcare.muhammadferysyahputra.my.id/api/mpasi
 Content-Type: application/json
 
 {
@@ -704,7 +704,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:3000/api/mpasi
+POST https://api.stuntcare.muhammadferysyahputra.my.id/api/mpasi
 Content-Type: application/json
 
 {
@@ -732,7 +732,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:3000/api/mpasi
+POST https://api.stuntcare.muhammadferysyahputra.my.id/api/mpasi
 Content-Type: application/json
 
 {
@@ -753,4 +753,169 @@ Content-Type: application/json
   "protein": 2.4,
   "lemak": 2.1,
   "karbohidrat": 8.8
+}
+
+// ! BATAS SUCI
+
+###
+POST https://api.stuntcare.muhammadferysyahputra.my.id/api/mpasi
+Content-Type: application/json
+
+{
+  "makanan": "Perkedel dari Kentang dan Kacang Merah",
+  "porsi": 4,
+  "bahan": {
+    "telur ayam": "1 butir",
+    "kentang kukus yang sudah dihaluskan": "2 buah",
+    "wortel kukus yang sudah dihaluskan": "1 buah",
+    "potong bagian paha tanpa kulit yang sudah digiling halus": "1 potong",
+    "kacang merah rebus yang sudah dihaluskan": "2 sendok makan",
+    "gula": "0.5 sendok teh",
+    "garam": "0.5 sendok teh",
+    "daun seledri yang sudah dicincang halus": "3 lembar"
+  },
+  "cara_masak": [
+    "Pecahkan telur dan kocok hingga semua bagian bercampur menjadi satu. Campur juga semua sisa bahan di wadah yang berbeda dengan telur.",
+    "Ketika sudah tercampur rata, Anda bisa langsung membentuk adonan kentang tersebut dalam bentuk bulat pipih untuk membuatnya terlihat seperti perkedel pada umumnya. Lakukan hal yang sama sampai semua adonan habis.",
+    "Kemudian celupkan adonan yang sudah dibentuk ke dalam kocokan telur dan goreng dengan minyak. Ulang proses ini sampai semua adonan digoreng. Jika sudah kecokelatan maka perkedel bisa diangkat, lalu disajikan."
+  ],
+  "kategori": "12-23 bulan",
+  "gambar": "https://crystalsea.id/blog/wp-content/uploads/2022/07/MPASI-1-Tahun-Perkedel-dari-Kentang-dan-Kacang-Merah-1024x682.webp",
+  "kalori": 250,
+  "protein": 10,
+  "lemak": 8,
+  "karbohidrat": 35
+}
+
+###
+POST https://api.stuntcare.muhammadferysyahputra.my.id/api/mpasi
+Content-Type: application/json
+
+{
+  "makanan": "Nasi Goreng Telur",
+  "porsi": 2,
+  "bahan": {
+    "nasi putih": "5 sendok makan",
+    "telur": "1 butir",
+    "daging ayam cincang (optional)": "secukupnya",
+    "bawang putih": "1 siung",
+    "bawang merah": "1 siung",
+    "butter": "2 sendok makan",
+    "buncis": "3 buah",
+    "wortel": "0.5 buah",
+    "garam": "0.25 sendok teh",
+    "kecap manis": "1 sendok teh"
+  },
+  "cara_masak": [
+    "Panaskan wajan dan masukkan butter. Tumis bawang putih dan bawang merah yang telah diiris halus hingga harum.",
+    "Masukkan buncis dan wortel yang telah dipotong kecil-kecil, serta telur atau daging ayam. Aduk semua bahan hingga rata.",
+    "Tambahkan nasi, garam, dan kecap manis. Masak dan aduk hingga semua bahan tercampur secara merata.",
+    "Jika sudah matang, nasi goreng siap disajikan."
+  ],
+  "kategori": "12-23 bulan",
+  "gambar": "https://crystalsea.id/blog/wp-content/uploads/2022/07/MPASI-Anak-Usia-1-Tahun-Nasi-Goreng-Telur-1024x682.webp",
+  "kalori": 300,
+  "protein": 12,
+  "lemak": 10,
+  "karbohidrat": 40
+}
+
+###
+POST https://api.stuntcare.muhammadferysyahputra.my.id/api/mpasi
+Content-Type: application/json
+
+{
+  "makanan": "Nugget Sayuran",
+  "porsi": 4,
+  "bahan": {
+    "ubi jalar merah rebus, haluskan": "150 gram",
+    "telur ayam, kocok": "50 gram",
+    "daging ayam": "30 gram",
+    "bayam, cincang kasar": "1 cangkir",
+    "wortel, parut kasar": "20 gram",
+    "bawang putih, cincang": "3 siung",
+    "garam": "secukupnya",
+    "minyak untuk menggoreng": "secukupnya"
+  },
+  "cara_masak": [
+    "Campurkan bayam, wortel, ubi, telur, daging ayam, bawang putih, dan garam hingga rata.",
+    "Ambil 1 sendok makan bahan dan bentuk bulat pipih menggunakan tangan. Lakukan langkah serupa pada sisa bahan.",
+    "Celupkan nugget yang telah dibentuk ke dalam kocokan telur dan goreng dalam minyak panas hingga berubah warna dan matang. Angkat dan tiriskan.",
+    "Lakukan langkah serupa pada sisa bahan. Sajikan selagi hangat."
+  ],
+  "kategori": "12-23 bulan",
+  "gambar": "https://mmc.tirto.id/image/otf/970x0/2019/07/10/nugget-ayam-istockphoto_ratio-16x9.jpg",
+  "kalori": 270.5,
+  "protein": 10.6,
+  "lemak": 15.7,
+  "karbohidrat": 30
+}
+
+###
+POST https://api.stuntcare.muhammadferysyahputra.my.id/api/mpasi
+Content-Type: application/json
+
+{
+  "makanan": "Soto Kudus",
+  "porsi": 4,
+  "bahan": {
+    "daging ayam": "500 gram",
+    "air": "2 liter",
+    "jahe, memarkan": "1 seruas",
+    "serai": "2 batang",
+    "bawang merah, iris halus": "6 butir",
+    "telur ayam, rebus, belah dua": "3 butir",
+    "tauge, seduh air panas": "100 gram",
+    "daun seledri, iris atau daun kucai": "3 utas",
+    "jeruk nipis": "secukupnya",
+    "bawang putih": "10 siung",
+    "jintan": "1 sendok teh",
+    "ketumbar, sangrai": "1 sendok teh",
+    "kunyit, sangrai/bakar": "2 sendok makan",
+    "garam": "secukupnya",
+    "merica": "secukupnya"
+  },
+  "cara_masak": [
+    "Rebus ayam, masukkan jahe dan serai, masak hingga ayam lunak. Angkat, suwir dagingnya, dan sisihkan.",
+    "Sangrai bawang merah iris dan bumbu yang dihaluskan hingga harum dengan api kecil.",
+    "Tuang kuah ayam panas-panas dan didihkan kembali.",
+    "Siapkan mangkok, tata taoge, ayam, telur, tuangkan kuah dalam mangkuk, taburi dengan irisan daun seledri atau daun kucai, peras jeruk nipis di atasnya.",
+    "Sajikan selagi hangat."
+  ],
+  "kategori": "12-23 bulan",
+  "gambar": "https://assets.unileversolutions.com/recipes-v3/241687-default.jpg?im=AspectCrop=(720,459);Resize=(720,459)",
+  "kalori": 350,
+  "protein": 20,
+  "lemak": 15,
+  "karbohidrat": 30
+}
+
+###
+POST https://api.stuntcare.muhammadferysyahputra.my.id/api/mpasi
+Content-Type: application/json
+
+{
+  "makanan": "Ikan Bakar",
+  "porsi": 4,
+  "bahan": {
+    "ikan air tawar": "1 ekor",
+    "jeruk nipis": "2 buah",
+    "bawang putih": "1 siung",
+    "bawang merah": "5 butir",
+    "ketumbar": "0.5 sendok teh",
+    "jahe": "1 cm",
+    "kunyit": "1 cm",
+    "garam": "secukupnya"
+  },
+  "cara_masak": [
+    "Lumuri ikan dengan jeruk nipis.",
+    "Bakar di atas bara, olesi bumbu yang telah dihaluskan selama membakar ikan.",
+    "Masak hingga matang, angkat dan sajikan."
+  ],
+  "kategori": "12-23 bulan",
+  "gambar": "https://img.herstory.co.id/articles/archive_20220821/resep-mpasi-20220821-205155.webp",
+  "kalori": 140.6,
+  "protein": 19.7,
+  "lemak": 5.6,
+  "karbohidrat": 0
 }

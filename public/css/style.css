@@ -5,20 +5,25 @@
   scroll-behavior: smooth;
 }
 
-input,button,select,textarea,a{
- min-width: 44px;
- min-height: 44px;
+input,
+button,
+select,
+textarea,
+a {
+  min-width: 44px;
+  min-height: 44px;
 }
 
 body {
   font-family: "Poppins", sans-serif;
   background: #f6f9ff;
+  background-color: #019973 !important;
   color: #444444;
 }
 
 a {
   color: #019973;
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 a:hover {
@@ -72,7 +77,6 @@ h6 {
 
 .dropdown-menu .dropdown-footer a {
   color: #444444;
-  text-decoration: underline;
 }
 
 .dropdown-menu .dropdown-footer a:hover {
@@ -97,7 +101,7 @@ h6 {
 }
 
 .dropdown-menu .dropdown-item:hover {
-  background-color: #C0EBD8;
+  background-color: #c0ebd8;
 }
 
 @media (min-width: 768px) {
@@ -203,6 +207,24 @@ h6 {
   background-color: rgba(255, 255, 255, 0.6);
 }
 
+.card-text {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  font-weight: 500;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: 14px;
+  line-height: 1.5em;
+  color: black;
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  border-radius: 5px;
+  padding: 5px 10px 5px;
+  background-color: #ffcd39;
+}
+
 /* Alerts */
 .alert-heading {
   font-weight: 500;
@@ -232,7 +254,7 @@ h6 {
 
 .accordion-button:not(.collapsed) {
   color: #012970;
-  background-color: #C0EBD8;
+  background-color: #c0ebd8;
 }
 
 .accordion-flush .accordion-button {
@@ -256,17 +278,17 @@ h6 {
 .breadcrumb {
   font-size: 14px;
   font-family: "Poppins", sans-serif;
-  color: #899bbd;
+  color: white;
   font-weight: 600;
 }
 
 .breadcrumb a {
-  color: #899bbd;
+  color: white;
   transition: 0.3s;
 }
 
 .breadcrumb a:hover {
-  color: #51678f;
+  color: #ffca2c;
 }
 
 .breadcrumb .breadcrumb-item::before {
@@ -274,7 +296,7 @@ h6 {
 }
 
 .breadcrumb .active {
-  color: #51678f;
+  color: #ffca2c !important;
   font-weight: 600;
 }
 
@@ -321,7 +343,7 @@ h6 {
 .logo span {
   font-size: 26px;
   font-weight: 700;
-  color: #012970;
+  color: #019973;
   font-family: "Poppins", sans-serif;
 }
 
@@ -472,7 +494,7 @@ h6 {
 }
 
 .header-nav .notifications .notification-item:hover {
-  background-color: #C0EBD8;
+  background-color: #c0ebd8;
 }
 
 .header-nav .messages {
@@ -507,7 +529,7 @@ h6 {
 }
 
 .header-nav .messages .message-item:hover {
-  background-color: #C0EBD8;
+  background-color: #c0ebd8;
 }
 
 .header-nav .profile {
@@ -540,7 +562,7 @@ h6 {
 }
 
 .header-nav .profile .dropdown-item:hover {
-  background-color: #C0EBD8;
+  background-color: #c0ebd8;
 }
 
 /*--------------------------------------------------------------
@@ -559,7 +581,7 @@ h6 {
   scrollbar-width: thin;
   scrollbar-color: #aab7cf transparent;
   box-shadow: 0px 0px 20px rgba(1, 41, 112, 0.1);
-  background-color: #fff;
+  background-color: #ffffff5e;
 }
 
 @media (max-width: 1199px) {
@@ -621,7 +643,7 @@ h6 {
 .sidebar-nav .nav-heading {
   font-size: 11px;
   text-transform: uppercase;
-  color: #899bbd;
+  color: #fff;
   font-weight: 600;
   margin: 10px 0 5px 15px;
 }
@@ -634,16 +656,17 @@ h6 {
   transition: 0.3;
   padding: 10px 15px;
   border-radius: 4px;
+  background-color: #fff;
 }
 
 .sidebar-nav .nav-link.active {
   color: #019973;
-  background: #C0EBD8;
+  background: #c0ebd8;
 }
 
-.sidebar-nav .nav-link.collapsed.active{
+.sidebar-nav .nav-link.collapsed.active {
   color: #019973;
-  background: #C0EBD8;
+  background: #c0ebd8;
 }
 
 .sidebar-nav .nav-link i {
@@ -663,7 +686,7 @@ h6 {
 
 .sidebar-nav .nav-link:hover {
   color: #019973;
-  background: #C0EBD8;
+  background: #c0ebd8;
 }
 
 .sidebar-nav .nav-link:hover i {
@@ -824,17 +847,47 @@ h6 {
   display: inline-block;
   padding: 8px 12px;
   margin: 0 5px;
-  background-color: #019973;
+  background-color: #ffca2c;
   color: white;
   text-decoration: none;
   border-radius: 4px;
   cursor: pointer;
+  align-content: center;
 }
 
 .pagination-button:hover {
   background-color: opacity(#019973, 0.8);
 }
 
-.form-label{
+.form-label {
   font-size: 16px;
+}
+
+.button-login {
+  background-color: #ffca2c !important;
+  color: white !important;
+}
+
+.button-login:hover {
+  background-color: #ffcd39 !important;
+  color: white !important;
+}
+
+.button-tambah {
+  background-color: #ffca2c !important;
+  color: white !important;
+}
+
+.button-tambah:hover {
+  background-color: #ffcd39 !important;
+  color: white !important;
+}
+
+.pagetitle {
+  color: white;
+}
+
+.searchBtn:hover {
+  background-color: #ffca2c !important;
+  color: white !important;
 }
