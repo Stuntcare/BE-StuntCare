@@ -1,7 +1,7 @@
 <section class="container">
     <div class="row mb-4 align-items-center">
         <div class="col">
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tambahArtikelModal">
+            <button type="button" class="btn button-tambah" data-bs-toggle="modal" data-bs-target="#tambahArtikelModal">
                 Tambah Data
             </button>
         </div>
@@ -9,7 +9,7 @@
             <div class="input-group">
                 <form id="searchForm" style="flex-direction: row; display: flex; margin-block: auto; width: 100%;">
                     <input type="text" id="searchKeyword" class="form-control" placeholder="Cari..." style="flex-grow: 1; margin-right: 8px;">
-                    <button class="btn btn-outline-secondary" type="submit" id="button-search" style="flex-shrink: 0;"><i class="bi bi-search"></i></button>
+                    <button class="btn text-white btn-outline-light searchBtn" type="submit" id="button-search" style="flex-shrink: 0;"><i class="bi bi-search"></i></button>
                 </form>
             </div>
         </div>        
@@ -33,7 +33,7 @@
                         <h5 class="card-title"><%= data[i].judul %></h5>
                         <p class="card-text"><%= data[i].kategori %></p>
                         <div class="d-flex justify-content-center">
-                            <button type="button" id="edit-button" class="btn btn-primary px-4 me-2" data-bs-toggle="modal" data-bs-target="#editArtikelModal" data-id="<%= data[i].id %>"><i class="bi bi-pencil"></i></button>
+                            <button type="button" id="edit-button" class="btn button-tambah px-4 me-2" data-bs-toggle="modal" data-bs-target="#editArtikelModal" data-id="<%= data[i].id %>"><i class="bi bi-pencil"></i></button>
                             <button type="button" id="delete-button" class="btn px-4 btn-danger" data-id="<%= data[i].id %>"><i class="bi bi-trash"></i></button>
                         </div>
                     </div>
@@ -44,8 +44,8 @@
 </section>
 
 
- <!-- Add Modal for Artikel -->
- <div class="modal fade" id="tambahArtikelModal" tabindex="-1" aria-labelledby="tambahArtikelModalLabel" aria-hidden="true">
+<!-- Add Modal for Artikel -->
+<div class="modal fade" id="tambahArtikelModal" tabindex="-1" aria-labelledby="tambahArtikelModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <form id="tambahArtikelForm">
             <div class="modal-content">
@@ -77,17 +77,17 @@
                     <div class="mb-3">
                         <label for="inputKategori" class="form-label">Kategori</label>
                         <select class="form-select" id="inputKategori" required>
-                          <option value="" disabled selected>Pilih Kategori</option>
-                          <option value="semua">Semua Kategori</option>
-                          <option value="6-8 bulan">6-8 bulan</option>
-                          <option value="9-12 bulan">9-12 bulan</option>
-                          <option value="12-23 bulan">12-23 bulan</option>
+                            <option value="" disabled selected>Pilih Kategori</option>
+                            <option value="Semua kategori">Semua Kategori</option>
+                            <option value="6-8 bulan">6-8 bulan</option>
+                            <option value="9-12 bulan">9-12 bulan</option>
+                            <option value="12-23 bulan">12-23 bulan</option>
                         </select>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Save changes</button>
+                    <button type="submit" class="btn button-tambah">Tambah Data</button>
                 </div>
             </div>
         </form>
@@ -137,7 +137,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Save changes</button>
+                    <button type="submit" class="btn button-tambah">Simpan Perubahan</button>
                 </div>
             </div>
         </form>

@@ -1,10 +1,5 @@
-/* eslint-disable no-param-reassign */
-/* eslint-disable import/no-unresolved */
 /* eslint-disable no-undef */
-
 /* eslint-disable no-console */
-const BASE_URL = 'http://localhost:3000';
-// const BASE_URL = 'https://stuntcare.cleverapps.io';
 
 const createMpasi = async () => {
   const tambahDataForm = document.getElementById('tambahMpasiForm');
@@ -77,7 +72,7 @@ const createMpasi = async () => {
         };
 
         console.log('Data yang dikirim:', mpasiData);
-        const response = await fetch(`${BASE_URL}/api/mpasi`, {
+        const response = await fetch('/api/mpasi', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -128,7 +123,7 @@ const deleteMpasi = async (id) => {
 
   if (result.isConfirmed) {
     try {
-      const response = await fetch(`${BASE_URL}/api/mpasi/${id}`, {
+      const response = await fetch(`/api/mpasi/${id}`, {
         method: 'DELETE',
       });
 
@@ -159,7 +154,7 @@ const deleteMpasi = async (id) => {
 
 const updateMpasi = async (id) => {
   try {
-    const getResponse = await fetch(`${BASE_URL}/api/mpasi/${id}`);
+    const getResponse = await fetch(`/api/mpasi/${id}`);
     if (!getResponse.ok) {
       const errorText = await getResponse.text();
       console.error('Error:', errorText);
@@ -185,8 +180,7 @@ const updateMpasi = async (id) => {
     const editCaraMasakContainer = document.getElementById('editCaraMasakContainer');
     const addEditCaraMasakButton = document.getElementById('addEditCaraMasakButton');
     editCaraMasakContainer.innerHTML = '';
-    masak = mpasi.data.cara_masak;
-    // const masak = JSON.parse(mpasi.data.cara_masak);
+    const masak = mpasi.data.cara_masak;
 
     masak.forEach((caraMasak) => {
       const inputGroup = document.createElement('div');
@@ -225,7 +219,28 @@ const updateMpasi = async (id) => {
         e.preventDefault();
 
         try {
-          const bahan = JSON.parse(document.getElementById('editBahan').value);
+          const bahanContent = document.getElementById('editBahan').value;
+          console.log('Bahan content before parsing:', bahanContent);
+
+          let bahan;
+          try {
+            // Ensure the string is a valid JSON object by adding curly braces if not present
+            if (!bahanContent.startsWith('{')) {
+              bahan = JSON.parse(`{${bahanContent}}`);
+            } else {
+              bahan = JSON.parse(bahanContent);
+            }
+          } catch (parseError) {
+            console.error('Error parsing bahan JSON:', parseError);
+            Swal.fire({
+              title: 'Error!',
+              text: 'Format JSON pada bahan tidak valid.',
+              icon: 'error',
+              confirmButtonText: 'OK',
+            });
+            return;
+          }
+
           const caraMasakInputs = document.getElementsByName('editCaraMasak[]');
           const caraMasak = Array.from(caraMasakInputs).map((input) => input.value);
 
@@ -243,7 +258,7 @@ const updateMpasi = async (id) => {
           };
 
           console.log(mpasiData);
-          const response = await fetch(`${BASE_URL}/api/mpasi/${id}`, {
+          const response = await fetch(`/api/mpasi/${id}`, {
             method: 'PUT',
             headers: {
               'Content-Type': 'application/json',
@@ -325,7 +340,7 @@ const loadPageData = async (pageUrl) => {
                 <h5 class="card-title">${mpasi.makanan}</h5>
                 <p class="card-text">${mpasi.kategori}</p>
                 <div class="d-flex justify-content-center">
-                  <button id="edit-button" class="btn px-4 btn-primary me-2" data-id="${mpasi.id}" data-bs-toggle="modal" data-bs-target="#editDataMpasi"><i class="bi bi-pencil"></i></button>
+                  <button id="edit-button" class="btn button-tambah px-4 me-2" data-id="${mpasi.id}" data-bs-toggle="modal" data-bs-target="#editDataMpasi"><i class="bi bi-pencil"></i></button>
                   <button id="delete-button" class="btn px-4 btn-danger" data-id="${mpasi.id}"><i class="bi bi-trash"></i></button>
                 </div>
               </div>
@@ -370,7 +385,7 @@ const search = async () => {
     searchForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       const keyword = document.getElementById('searchKeyword').value;
-      const searchUrl = `${BASE_URL}/api/mpasi?q=${keyword}`;
+      const searchUrl = `/api/mpasi?q=${keyword}`;
       await loadPageData(searchUrl);
     });
   }
@@ -381,7 +396,7 @@ const filter = async () => {
   if (filterKategori) {
     filterKategori.addEventListener('change', async (e) => {
       const keyword = e.target.value;
-      let filterUrl = `${BASE_URL}/api/mpasi`;
+      let filterUrl = '/api/mpasi';
       if (keyword !== 'semua') {
         filterUrl = `${filterUrl}?kategori=${keyword}`;
         // filterUrl = `${filterUrl}?limit=30,kategori=${keyword}`;
