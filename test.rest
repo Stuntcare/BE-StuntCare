@@ -186,3 +186,24 @@ Content-Type: application/json
 ###
 DELETE http://localhost:3000/users/logout
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo5LCJyb2xlIjoidXNlciJ9LCJpYXQiOjE3MTYzNDM4ODIsImV4cCI6MTcxNjM0NDc4Mn0.lC8-OnO9OXnHL7t4GGYCN7zc0jD9EKtBq_S3QgetcEg
+
+
+###
+POST  http://localhost:3000/users/register
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "email": "admin@gmail.com",
+  "password": "password",
+  "role": "user"
+}
+
+###
+POST http://localhost:3000/users/login
+Content-Type: application/json
+
+{
+  "email": "admin@gmail.com",
+  "password": "password"
+}

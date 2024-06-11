@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
 const path = require('path');
+const cookieParser = require('cookie-parser');
 const apiRoute = require('../route/api');
 const userRouter = require('../route/userRoutes');
 const adminRouter = require('../route/adminRoutes');
@@ -35,6 +36,7 @@ web.use(
   }),
 );
 
+web.use(cookieParser());
 web.use(cors());
 web.use(express.json());
 

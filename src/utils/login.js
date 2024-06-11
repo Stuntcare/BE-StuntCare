@@ -3,51 +3,8 @@
 /* eslint-disable no-console */
 /* eslint-disable no-alert */
 
+// eslint-disable-next-line import/no-extraneous-dependencies
 const BASE_URL = 'http://localhost:3000';
-// const BASE_URL = 'https://stuntcare.cleverapps.io';
-
-// function getAccessToken() {
-//   return localStorage.getItem('accessToken');
-// }
-
-// function putAccessToken(token) {
-//   localStorage.setItem('accessToken', token);
-// }
-
-// async function fetchWithAuth(url, options = {}) {
-//   const response = await fetch(url, {
-//     ...options,
-//     headers: {
-//       ...options.headers,
-//       Authorization: `Bearer ${getAccessToken()}`,
-//     },
-//   });
-
-//   if (!response.ok) {
-//     const errorText = await response.text();
-//     throw new Error(errorText);
-//   }
-
-//   return response.json();
-// }
-
-// const fetchDashboardData = async () => {
-//   try {
-//     const response = await fetchWithAuth(`${BASE_URL}/dashboard`);
-//     const data = await response.json();
-//     console.log(response);
-//     console.log(data);
-//     if (response.ok) {
-//       console.log(data);
-//     } else {
-//       console.error('Failed to fetch dashboard data:', data.message);
-//       alert('Gagal memuat data dashboard');
-//     }
-//   } catch (error) {
-//     alert(error);
-//     // alert('Terjadi kesalahan saat memuat data dashboard.');
-//   }
-// };
 
 const MAX_LOGIN_ATTEMPTS = 3;
 const LOCKOUT_DURATION = 60 * 1000;
@@ -78,12 +35,13 @@ async function login(email, password) {
     });
 
     const responseJson = await response.json();
-    const { message } = responseJson;
+    const { message, data } = responseJson;
 
     if (message !== 'Berhasil login') {
       throw new Error();
     }
 
+    document.cookie = `accessToken=${data.accessToken}; path=/;`;
     localStorage.removeItem('loginAttempts');
     localStorage.removeItem('loginLockedUntil');
 

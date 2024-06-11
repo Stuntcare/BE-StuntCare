@@ -78,7 +78,7 @@ Content-Type: application/json
     "4. Ketika akan dicampur dengan nasi, ambil daun salam dan daun jeruknya. Lalu saring hingga teksturnya sesuai yang diinginkan."
   ],
   "kategori": "6-8 bulan",
-  "gambar": "https://blue.kumparan.com/image/upload/fl_progressive,fl_lossy,c_fill,q_auto:best,w_640/v1634025439/7eb31d6a3a0418b558d1086f346f1b3c1a880bed7346f4223e15227a763a1827.jpg",
+  "gambar": "https://img.herstory.co.id/articles/archive_20220511/resep-mpasi-20220511-142142.webp",
   "kalori": 80,
   "protein": 4.3,
   "lemak": 4.3,
@@ -644,7 +644,7 @@ Content-Type: application/json
     "Potong-potong daging buah melon dan pisang ambon. Kalau sudah dipotong-potong, satukan melon, pisang, dan yogurt.",
     "Proses dengan blender sampai halus. Sajikan untuk Si Kecil."
   ],
-  "kategori": "6-11 bulan",
+  "kategori": "6-8 bulan",
   "gambar": "https://img-global.cpcdn.com/recipes/b46ba86ff6433179/680x482cq70/apel-melon-with-yogurt-8m-mpasi-foto-resep-utama.webp",
   "kalori": 82.2,
   "protein": 2.0,
@@ -668,7 +668,7 @@ Content-Type: application/json
     "Keruk daging buah alpukat dengan sendok. Haluskan bersama air matang menggunakan blender, tuang ke dalam wadah makan.",
     "Tuang ASI perah, aduk hingga tercampur rata. Saring dan sajikan."
   ],
-  "kategori": "6-11 bulan",
+  "kategori": "6-8 bulan",
   "gambar": "https://akcdn.detik.net.id/community/media/visual/2022/08/26/snack-mpasi-6-bulan_169.jpeg?w=620",
   "kalori": 133,
   "protein": 1.7,
